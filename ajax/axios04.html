@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        button.my-btn{
+            margin: 50px;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: rgb(6, 135, 186);
+            border: none;
+            font-size: 17px;
+            font-weight: 530;
+        }
+        button.my-btn:hover{
+            background-color: rgba(4, 110, 153,0.7);
+        }
+        .my-input{
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0,0.3);
+            font-size: 15px;
+            padding-left: 10px;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+    </div> -->
+
+    <!-- 自定义属性设置隐藏与显示 -->
+    <!-- <button class="my-btn" data-bs-toggle="modal" data-bs-target=".my-box">显示弹窗</button> -->
+    <!-- 引入bootstrao的标签 （默认display:none） -->
+    <!-- <div class="modal my-box" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <!-- js设置隐藏与显示 -->
+    <button class="my-btn">显示弹窗</button>
+    <!-- 引入bootstrao的标签 （默认display:none） -->
+    <div class="modal my-box" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- 弹窗的顶部 -->
+                <div class="modal-header">
+                    <h5 class="modal-title">请输入姓名</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- 弹窗的中部 -->
+                <div class="modal-body">
+                    <p>
+                        <input class="my-input" type="text" placeholder="请输入姓名">
+                    </p>
+                </div>
+                <!-- 弹窗的底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary success">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入bootstrap的js文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        const bsmodal = document.querySelector('.my-box')
+        const modal = new bootstrap.Modal(bsmodal)
+
+        document.querySelector('.my-btn').addEventListener('click',()=>{
+            document.querySelector('.my-input').value = 'jump'
+            // 显示
+            modal.show()
+        })
+
+        document.querySelector('.success').addEventListener('click',()=>{
+            const data = document.querySelector('.my-input').value
+            console.log(data)
+            // 隐藏
+            modal.hide()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="my-p"></p>
+    <button class="my-btn">注册</button>
+
+
+    <script>
+        // 黑马后端接口文档 -- https://www.apifox.cn/apidoc/docs-site/1937884/doc-1695440
+
+        // Promise对象处理异步操作
+        // const p = new Promise((resolve,reject) => {     // （待定状态）
+        //     // 这里的代码会被立即执行
+        //     setTimeout(()=>{
+        //         // resolve('成功')
+        //         reject(new Error('失败'))
+        //     },2000)
+        // })
+        // console.log(p)
+        // p.then(res => {
+        //     console.log(res)    // 成功 （兑现状态）
+        // }).catch(err => {
+        //     console.log(err)    // 失败 （拒绝状态）
+        // })
+
+        // // Promise与XMLHttpRequset
+        // const p = new Promise((resolve,reject) => {
+        //     const xhr = new XMLHttpRequest()
+        //     xhr.open('get','https://hmajax.itheima.net/api/province')
+        //     xhr.addEventListener('loadend',()=>{
+        //         if(xhr.readyState == 4 && xhr.status == 200){   // 成功
+        //             resolve(JSON.parse(xhr.response))
+        //         }else{          // 失败
+        //             reject(new Error(xhr.response))
+        //         }
+        //     })
+        //     xhr.send()
+        // })
+        // // 关联成功和失败函数,处理后续操作
+        // p.then(res => {             // 兑现状态
+        //     console.log(res)
+        //     document.querySelector('.my-p').innerHTML = res.list.join('<br>')   // 显示
+        // }).catch(err => {           // 拒绝状态
+        //     // 错误对象要用console.dir()详细打印
+        //     console.dir(err)    
+        //     document.querySelector('.my-p').innerHTML = err.message // 显示
+        // })
+
+        // // 模拟axios函数
+        // function myAxios(config){
+        //     return new Promise((resolve,reject) => {
+        //         const xhr = new XMLHttpRequest()
+        //         xhr.open(config.method || 'GET',config.url)
+        //         xhr.addEventListener('loadend', ()=>{
+        //             if(xhr.readyState == 4 && xhr.status == 200){   // 成功
+        //                 resolve(JSON.parse(xhr.response))
+        //             }else{          // 失败
+        //                 reject(new Error(xhr.response))
+        //             }
+        //         })
+        //         xhr.send()
+        //     })
+        // }
+        // // axios函数本身就是由Promise对象和XMLHttpRequest对象封装组成的
+        // // 使用myAxios函数
+        // myAxios({
+        //     url:'https://hmajax.itheima.net/api/province'
+        // }).then(res => {
+        //     console.log(res)
+        //     document.querySelector('.my-p').innerHTML = res.list.join('<br>')   // 显示
+        // }).catch(error => {
+        //     console.log(error)
+        //     document.querySelector('.my-p').innerHTML = error.message // 显示
+        // })
+
+        // XHR传查询参数 -- 直接写在url后面
+        // 模拟axios函数处理查询参数（params）
+        // function myAxios(config){
+        //     return new Promise((resolve,reject) => {
+        //         const xhr = new XMLHttpRequest()
+        //         // 获取查询参数
+        //         if(config.params){      // 有查询参数
+        //             const paramsObj = new URLSearchParams(config.params)
+        //             const paramsStr = paramsObj.toString()
+        //             config.url += `?${paramsStr}`    // 在url后面添加查询参数
+        //         }
+        //         xhr.open(config.method || 'GET' , config.url)
+        //         xhr.addEventListener('loadend', ()=>{
+        //             if(xhr.readyState == 4 && xhr.status == 200){   // 成功
+        //                 resolve(JSON.parse(xhr.response))
+        //             }else{          // 失败
+        //                 reject(new Error(xhr.response))
+        //             }
+        //         })
+        //         xhr.send()
+        //     })
+        // }
+        // // 使用myAxios函数
+        // myAxios({
+        //     url:'https://hmajax.itheima.net/api/area',
+        //     params:{
+        //         pname:'广东省',
+        //         cname:'佛山市'
+        //     }
+        // }).then(res => {
+        //     console.log(res)
+        //     document.querySelector('.my-p').innerHTML = res.list.join('<br>')   // 显示
+        // }).catch(error => {
+        //     console.log(error)
+        //     document.querySelector('.my-p').innerHTML = error.message // 显示
+        // })
+
+        // XHR传提交参数 -- 1. 写请求头  2. data对象传入send()方法中 （data要转为字符串形式）
+        // 模拟axios函数处理提交参数（data）
+        function myAxios(config) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest()
+                // 获取查询参数
+                if (config.params) {      // 有查询参数
+                    const paramsObj = new URLSearchParams(config.params)
+                    const paramsStr = paramsObj.toString()
+                    config.url += `?${paramsStr}`    // 在url后面添加查询参数
+                }
+                xhr.open(config.method || 'GET', config.url)
+                xhr.addEventListener('loadend', () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {   // 成功
+                        resolve(JSON.parse(xhr.response))
+                    } else {          // 失败
+                        reject(new Error(xhr.response))
+                    }
+                })
+                // 提交参数 （form-data）
+                if (config.data) {
+                    xhr.setRequestHeader('Content-Type', 'application/json') // 设置请求头
+                    xhr.send(JSON.stringify(config.data))   // 设置请求体
+                } else {
+                    xhr.send()
+                }
+            })
+        }
+        document.querySelector('.my-btn').addEventListener('click', () => {
+            // 使用myAxios函数
+            myAxios({
+                url: 'https://hmajax.itheima.net/api/register',
+                method: 'post',
+                data: {
+                    username: 'itheima666666',
+                    password: '999999'
+                }
+            }).then(res => {    // 成功
+                console.log(res)
+            }).catch(error => {     // 失败
+                console.log(error)
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

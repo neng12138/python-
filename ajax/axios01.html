@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="my-p"></p>
+    <button class="zc">注册用户</button>
+    <button class="dl">用户登录</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // axios({
+        //     method:'get',
+        //     url:'http://hmajax.itheima.net/api/province'
+        // }).then(function(res){
+        //     console.log(res)
+        //     console.log(res.data.list);
+        //     console.log(res.data.list.join('<br>'));
+        //     // 将从后端得到的数据插入前端网页上
+        //     document.querySelector('.my-p').innerHTML = res.data.list.join('<br>')
+        // })
+
+        // axios({
+        //     url:'http://hmajax.itheima.net/api/city',
+        //     params:{
+        //         pname: '广东省'
+        //     }
+        // }).then(res => {
+        //     console.log(res.data.list);
+        //     // 将从后端得到的数据插入前端网页上
+        //     document.querySelector('.my-p').innerHTML = res.data.list.join('<br>')
+        // })
+
+        // let pname = '广东省'
+        // let cname = '佛山市'
+        // axios({
+        //     url: 'http://hmajax.itheima.net/api/area',
+        //     params:{
+        //         pname,       // 等价于 pname : pname
+        //         cname
+        //     }
+        // }).then(res => {
+        //     console.log(res.data.list);
+        //     // 将从后端得到的数据插入前端网页上
+        //     document.querySelector('.my-p').innerHTML = res.data.list.join('<br>')
+        // })
+
+        document.querySelector('.zc').addEventListener('click',function(){
+            // 前端请求后端要考虑成功和失败两种情况
+            axios({     // 传一个对象
+                url: 'http://hmajax.itheima.net/api/register',
+                method:'post',
+                data:{
+                    username:'itheima12138',
+                    password:'123456'
+                }
+            }).then(res => {    // 箭头函数
+                // 成功
+                console.log(res);
+            }).catch(error => {     // 箭头函数
+                // 失败
+                // 处理错误信息
+                console.log(error);
+                console.log(error.response.data.message);
+            })
+            
+        })
+
+        document.querySelector('.dl').addEventListener('click',function(){
+            // 登录
+            axios({     // 传一个对象 （axios用于发送HTTP请求，接收HTTP响应）
+                // url : '请求接口地址'
+                url: 'http://hmajax.itheima.net/api/login',
+                // method : '请求方法'
+                method:'post',
+                // data : { 参数名 ： 值 }
+                data:{
+                    username:'itheima12138',
+                    password:'123456'
+                }
+            }).then(res => {    // 箭头函数 （then用于处理响应）
+                // 成功
+                console.log(res);
+            }).catch(error => {     // 箭头函数 （catch用于处理异常）
+                // 失败
+                console.log(error);
+                console.log(error.response.data.message);
+            })
+
+        })
+
+// 黑马后端接口文档 -- https://www.apifox.cn/apidoc/docs-site/1937884/doc-1695440
+        
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <form class="form" autocomplete="off" onsubmit="return false">
+            <div class="form-item">
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-item">
+                <label for="password">密码：</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button class="btn">登录</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="form-serialize.js"></script>
+    <script>
+        // axios实现ajax -- 发送HTTP请求，接收HTTP响应
+        // axios({url,method,data,params}).then(res => {}).catch(error => {})
+
+        // 插件form-serialize -- 快速收集表单的内容 （name属性）
+        // 1. 导入form-serialize.js文件
+        // 2. 调用serialize()方法
+        //      第一个参数：要收集的表单元素 （DOM元素）
+        //          表单元素设置name属性作为属性名
+        //      第二个参数：配置对象
+        //          hash：true -- js对象 （{username: '', password: ''}）
+        //               false -- 字符串 （username=&password=）
+        //          empty：true -- 表单内容为空也收集
+        //               false -- 表单内容不为空才收集
+
+        document.querySelector('.btn').addEventListener('click',function(){
+            // 1. 获取用户输入的内容
+            const form = document.querySelector('.form')
+            const data = serialize(form, {hash: true,empty: true})
+            console.log(data)
+        })
+
+    </script>
+</body>
+</html>

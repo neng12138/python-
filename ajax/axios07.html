@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="my-p"></p>
+    <button class="my-btn">注册</button>
+
+
+    <script>
+        // 黑马后端接口文档 -- https://www.apifox.cn/apidoc/docs-site/1937884/doc-1695440
+    
+        // // ajax原生对象XMLHttpRequest
+        // const xhr = new XMLHttpRequest()    // 1.创建对象
+        // xhr.open('GET', 'https://hmajax.itheima.net/api/province')  // 2.初始化
+        // xhr.addEventListener('loadend',()=>{
+        //     console.log(xhr.response);
+        //     const data = JSON.parse(xhr.response)
+        //     console.log(data.list.join('<br>'))
+        //     // 显示
+        //     document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+        // })
+        // xhr.send()  // 3.发送
+
+        // const xhr = new XMLHttpRequest()
+        // // 查询参数 （params）
+        // xhr.open('get','https://hmajax.itheima.net/api/city?pname=辽宁省')
+        // xhr.addEventListener('loadend',()=>{
+        //     console.log(xhr.response);
+        //     const data = JSON.parse(xhr.response)
+        //     // 显示
+        //     document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+        // })
+        // xhr.send()
+
+        // // XHR使用URLSearchParams对象获取查询参数
+        // const params = {pname : '广东省' , cname : '佛山市'}
+        // const paramsObj = new URLSearchParams(params)
+        // console.log(paramsObj.toString())    // pname=广东省&cname=佛山市
+        // const xhr = new XMLHttpRequest()
+        // xhr.open('get',`https://hmajax.itheima.net/api/area?${paramsObj.toString()}`)
+        // xhr.addEventListener('loadend',()=>{
+        //     console.log(xhr.response);
+        //     const data = JSON.parse(xhr.response)
+        //     // 显示
+        //     document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+        // })
+        // xhr.send()
+
+        // XHR设置提交参数（data）
+        document.querySelector('.my-btn').addEventListener('click',()=>{
+            const xhr = new XMLHttpRequest()
+            xhr.open('post','https://hmajax.itheima.net/api/register')
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type','application/json')
+            xhr.addEventListener('loadend',()=>{
+                console.log(xhr.response)
+            })
+            // 发送数据 （json字符串）
+            const data = {username: 'itheima12138',password: '123456'}
+            // xhr.send()方法接收的是字符串
+            xhr.send(JSON.stringify(data))
+        })
+        
+
+
+    </script>
+</body>
+</html>
+

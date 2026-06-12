@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+        }
+
+        .box div {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+            <span>省：</span>
+            <select name="province" id="province">
+                <option class="province"></option>
+            </select>
+        </div>
+        <div>
+            <span>市：</span>
+            <select name="city" id="city">
+                <option class="city"></option>
+            </select>
+        </div>
+        <div>
+            <span>区：</span>
+            <select name="area" id="area">
+                <option class="area"></option>
+            </select>
+        </div>
+    </div>
+    <ul class="my-ul"></ul>
+
+    <!-- axios.js -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // 黑马后端接口文档 -- https://www.apifox.cn/apidoc/docs-site/1937884/doc-1695440
+
+        // // 回调函数地狱
+        // // 问题 ：1. 可读性差  2. 异常捕获困难  3. 耦合性严重
+        // axios({url:'https://hmajax.itheima.net/api/province'}).then(res => {
+        //     console.log(res.data.list[0])
+        //     const pname = res.data.list[0]
+        //     document.querySelector('.province').innerHTML = pname
+        //     // 省份选择后，根据省份获取城市
+        //     axios({url:'https://hmajax.itheima.net/api/city',params:{pname}}).then(res => {
+        //         console.log(res.data.list[0])
+        //         const cname = res.data.list[0]
+        //         document.querySelector('.city').innerHTML = cname
+        //         // 城市选择后，根据城市获取区县
+        //         axios({url:'https://hmajax.itheima.net/api/area',params:{pname , cname}}).then(res => {
+        //             console.log(res.data.list[0])
+        //             const aname = res.data.list[0]
+        //             document.querySelector('.area').innerHTML = aname
+        //         })
+        //     })
+        // })
+
+        // // Promise的链式调用 -- 解决回调函数地狱
+        // axios({url:'https://hmajax.itheima.net/api/province'}).then(res => {
+        //     const pname = res.data.list[0]
+        //     document.querySelector('.province').innerHTML = pname
+        //     // 新Promise对象
+        //     return new Promise((resolve , reject) => {
+        //         axios({url:'https://hmajax.itheima.net/api/city',params:{pname}}).then(res => {
+        //             const cname = res.data.list[0]
+        //             resolve({pname , cname})        // 传给下一个then
+        //         })
+        //     })
+        // }).then(res => {
+        //     const cname = res.cname
+        //     document.querySelector('.city').innerHTML = cname
+        //     // 新Promise对象
+        //     const pname = res.pname
+        //     return new Promise((resolve , reject) => {
+        //         axios({url:'https://hmajax.itheima.net/api/area',params:{pname , cname}}).then(res => {
+        //             const aname = res.data.list[0]
+        //             resolve(aname)          // 传给下一个then
+        //         })
+        //     })
+        // }).then(res => {
+        //     const aname = res
+        //     document.querySelector('.area').innerHTML = aname
+        // })
+
+        // // Promise的链式调用 -- 解决回调函数地狱
+        // let pname = '' , cname = ''
+        // axios({url:'https://hmajax.itheima.net/api/province'}).then(res => {
+        //     pname = res.data.list[0]
+        //     document.querySelector('.province').innerHTML = pname
+        //     // 获取城市的Promise对象
+        //     // 返回的Promise对象就是新的Promise对象
+        //     return axios({url:'https://hmajax.itheima.net/api/city',params:{pname}})
+        // }).then(res => {
+        //     cname = res.data.list[0]
+        //     document.querySelector('.city').innerHTML = cname
+        //     // 获取区县的Promise对象
+        //     // 返回的Promise对象就是新的Promise对象
+        //     return axios({url:'https://hmajax.itheima.net/api/area',params:{pname , cname}})
+        // }).then(res => {
+        //     const aname = res.data.list[0]
+        //     document.querySelector('.area').innerHTML = aname
+        // })
+
+        // // async和await关键字 -- 解决回调函数地狱
+        // // async -- 修饰函数，代表函数是异步的
+        // async function getData(){
+        //     // await -- 1. 原地等待  2. 获取Promise对象的成功结果
+        //     const pRes = await axios({url:'https://hmajax.itheima.net/api/province'})
+        //     const pname = pRes.data.list[0]
+
+        //     const cRes = await axios({url:'https://hmajax.itheima.net/api/city',params:{pname}})
+        //     const cname = cRes.data.list[0]
+
+        //     const aRes = await axios({url:'https://hmajax.itheima.net/api/area',params:{pname , cname}})
+        //     const aname = aRes.data.list[0]
+
+        //     document.querySelector('.province').innerHTML = pname
+        //     document.querySelector('.city').innerHTML = cname
+        //     document.querySelector('.area').innerHTML = aname
+        // }
+        // getData()
+
+        // // async和await关键字的异常捕获
+        // async function getData() {
+        //     try {
+        //         const pRes = await axios({ url: 'https://hmajax.itheima.net/api/province' })
+        //         const pname = pRes.data.list[0]
+
+        //         const cRes = await axios({ url: 'https://hmajax.itheima.net/api/city', params: { pname } })
+        //         const cname = cRes.data.list[0]
+
+        //         const aRes = await axios({ url: 'https://hmajax.itheima.net/api/area', params: { pname, cname } })
+        //         const aname = aRes.data.list[0]
+
+        //         document.querySelector('.province').innerHTML = pname
+        //         document.querySelector('.city').innerHTML = cname
+        //         document.querySelector('.area').innerHTML = aname
+        //     }catch(error){
+        //         console.dir(error)
+        //         console.log(error.response.message)
+        //     }
+        // }
+        // getData()
+
+        
+        // Promise.all()  -- 合并多个Promise对象 ， 要统一处理结果
+        // 1. 请求各城市天气的Promise对象
+        const bjPromise = axios({url:'https://hmajax.itheima.net/api/weather',params:{city:'110100'}})
+        const shPromise = axios({url:'https://hmajax.itheima.net/api/weather',params:{city:'310100'}})
+        const gzPromise = axios({url:'https://hmajax.itheima.net/api/weather',params:{city:'440100'}})
+        const szPromise = axios({url:'https://hmajax.itheima.net/api/weather',params:{city:'440300'}})
+        // 2. 合并Promise对象
+        const p = Promise.all([bjPromise , shPromise , gzPromise , szPromise])
+        p.then(res => {             // 成功 -- 所有的Promise对象的状态都是成功状态（fulfilled）,就执行then
+            // 数组的顺序与传入的对象数组的顺序一样
+            console.log(res)
+            const htmlStr = res.map(item => {
+                return `<li>${item.data.data.area} --- ${item.data.data.weather}</li>`
+            }).join('')
+            document.querySelector('.my-ul').innerHTML = htmlStr
+            
+        }).catch(err => {       // 失败 -- 但凡有一个Promise对象的状态是失败状态（rejected）,就执行catch
+            console.dir(err)
+        })
+
+
+    </script>
+</body>
+
+</html>

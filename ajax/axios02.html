@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(82, 81, 81, 0.2);
+        }
+        .box{
+            position: relative;
+            margin: 150px auto;
+            width: 500px;
+            height: 550px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .title-text{
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .username{
+            position: absolute;
+            top: 200px;
+            left: 80px;
+        }
+        .password{
+            position: absolute;
+            top: 300px;
+            left: 80px;
+        }
+        .password p,.username p{
+            margin-left: 4px;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(0, 0, 0,0.6);
+        }
+        .password input,.username input{
+            width: 300px;
+            height: 35px;
+            margin-top: 6px;
+            color: rgba(0, 0, 0,0.8);
+            border: 1px solid rgba(0, 0, 0,0.6);
+            border-radius: 4px;
+            outline: none;
+            font-size: 20px;
+            color: rgba(0, 0, 0,0.8);
+            padding-left: 10px;
+
+        }
+        .btn{
+            position: absolute;
+            top: 430px;
+            left: 130px;
+            width: 210px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(103, 154, 215, 0.8);
+            border: 0;
+            border-radius: 4px;
+        }
+        .show{
+            line-height: 60px;
+            position: absolute;
+            top: 130px;
+            width: 500px;
+            height: 60px;
+            border-radius: 2px;
+            text-align: center;
+            color: rgba(0, 0, 0,0.65);
+            font-size: 22px;
+            font-weight: 500;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .success{
+            background-color: rgba(98, 208, 98,0.8);
+        }
+        .fail{
+            background-color: rgba(255, 192, 203,0.8);
+        }
+        .active{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="title-text">欢迎-登录</p>
+        <div class="show">提示信息</div>
+        <form class="form" autocomplete="off" onsubmit="return false">
+            <div class="username">
+                <p>账号名</p>
+                <input type="text" name="username">
+            </div>
+            <div class="password">
+                <p>密码</p>
+                <input type="password" name="password">
+            </div>
+            <button class="btn">登录</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="form-serialize.js"></script>
+    <script>
+        // // 黑马接口注册
+        // // axios实现ajax -- 发送HTTP请求，接收HTTP响应
+        // axios({
+        //     url: 'http://hmajax.itheima.net/api/register',
+        //     method: 'post',
+        //     data: {
+        //         username: 'itheima12138',
+        //         password: '123456'
+        //     }
+        // }).then(res => {
+        //     console.log(res.data);
+        // }).catch(error => {
+        //     console.log(error.response.data); 
+        // })
+
+        const un = document.querySelector('.username input')
+        const pwd = document.querySelector('.password input')
+        const show = document.querySelector('.box .show')
+
+        let flag = null
+        function end(){      // 登录成功或失败后，2秒后隐藏提示信息 （防抖）
+            // 防抖 -- 重复触发事件，只执行最后一次
+            // 节流 -- 触发事件时，执行完当前的事件才会再次监听
+            if (flag) {
+                clearTimeout(flag)    // 消除已经开启但未结束的定时器
+            }
+            // 间歇函数（setInterval） -- 会重复触发事件
+            // 延时函数（setTimeout）-- 只触发一次
+            flag = setTimeout(() => {       // 延时函数
+                show.classList.remove('active','success','fail')
+                flag = null
+            }, 2000);
+        }
+
+        function alertFn(msg,isSuccess){    // 显示提示信息
+            show.innerHTML = msg
+            show.classList.add('active')
+            if(isSuccess){      // true -- 绿色背景
+                show.classList.remove('fail')
+                show.classList.add('success')
+            }else{              // false -- 红色背景
+                show.classList.remove('success')
+                show.classList.add('fail')
+            }
+            end()   // 2秒后隐藏提示信息
+        }
+        
+        document.querySelector('.btn').addEventListener('click',function(){
+            // 使用form-serialize插件快速获取表单的内容
+            const form = document.querySelector('.form')
+            const data = serialize(form, {hash: true,empty: true})
+            // // 对象解构 -- 快速获取对象的属性值
+            // const {username,password} = data  // itheima12138  123456        
+            // 前端进行基本的长度判断
+            if(data.username.length < 8){
+                alertFn('用户名必须至少8位',false)
+                return 
+            }
+            if(data.password.length < 6){
+                alertFn('密码必须至少6位',false)
+                return
+            }
+            // 提交数据给服务器 （axios实现ajax）
+            axios({
+                url: 'http://hmajax.itheima.net/api/login',
+                method:'post',
+                // data:data
+                data
+            }).then(res => {        // 登录成功 
+            // 等不进去时要重新去黑马的注册接口注册一下 （会定期清缓存）
+                console.log(res.data)
+                alertFn(res.data.message,true)
+                // 登录成功后，跳转到一个新的页面
+            }).catch(error => {        // 抛出异常，处理异常 
+                console.log(error.response.data)
+                alertFn(error.response.data.message,false)
+            })
+        })
+    </script>
+</body>
+</html>
