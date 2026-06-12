@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* .box{
+        width: 600px;
+        height: 600px;
+        background : url(https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800)
+        no-repeat top center/contain;
+    } */
+
+     /* .nav{
+        color : red;
+     }
+     .box{
+        width: 300px;
+        height: 300px;
+        background-color: skyblue;
+        margin: 100px auto;
+        padding: 10px;
+        border: 2px solid blue;
+     } */
+
+     .slider{
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        width: 500px;
+        height: 400px;
+        /* background-color: skyblue; */
+     }
+     .slider-top{
+        width: 100%;
+        height: 310px;
+        /* background-color: pink; */
+        background-repeat: no-repeat;
+        background-size: 100% 310px;
+     }
+     .slider-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 90px;
+        /* background-color: green; */
+     }
+    .slider-text{
+        font-weight: 600;
+        margin: 5px;
+        padding: 3px;
+        /* background-color: yellow; */
+     }
+     .bot{
+        width: 200px;
+        margin  : 8px;
+        padding : 5px;
+        display: flex;
+        justify-content: space-around;
+        /* background-color: red; */
+     }
+     ul li{
+        list-style: none;     
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;     /* 圆 */ 
+     }
+     .active{
+        margin-top: -2px;
+        width: 13px;
+        height: 13px;
+        background-color: white;
+     }
+     
+
+</style>
+<body>
+    <!-- <ul>
+        <li>测试1</li>
+        <li>测试2</li>
+        <li>测试3</li>
+    </ul>
+    <div>测试1</div>
+    <div>测试2</div> -->
+
+    <!-- <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方法</li>
+    </ul> -->
+
+    <!-- <p class="p">我是一个p标签</p> -->
+
+    <!-- <div class="wrapper">
+        <strong>传智教育年度抽奖</strong>
+        <div class="level">
+            <h1>一等奖：<span></span></h1>
+            <h3>二等奖：<span></span></h3>
+            <h6>三等奖：<span></span></h6>
+        </div>
+    </div> -->
+
+    <!-- <img class="ikun" src="" alt=""> -->
+
+    <!-- <div class="box"></div> -->
+
+    <!-- <div class="nav box">123</div> -->
+
+    <div class="slider">
+        <div class="slider-top">
+        </div>
+        <div class="slider-bottom">
+            <h2 class="slider-text"></h2>
+            <ul class="bot">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+<script>
+    // const div = document.querySelector('div');     // 只选择匹配到的第一个div
+    // console.log(div);
+
+    // // const li = document.querySelector('ul li:first-child');  // 第一个li
+    // const li = document.querySelector('ul li');     // 第一个li
+    // console.log(li);
+    
+    // const lis = document.querySelectorAll('.nav li')    // 返回一个伪数组[]
+    // // console.log(lis);
+    // for(let i = 0;i < lis.length; i++){
+    //     console.log(lis[i]);
+    // }
+
+    // const p = document.querySelector('.p')  // 获取标签
+    // // console.log(p.innerText)    // 获取标签的文本内容
+    // // p.innerText = '<strong>我是一个p标签, 我被修改了</strong>'    // 修改标签的文本内容
+    // // console.log(p.innerText);    // innerText 不解析标签
+    
+    // console.log(p.innerHTML);    // 获取标签的HTML内容
+    // p.innerHTML = '<strong>我是一个p标签, 我被修改了</strong>'    // 修改标签的HTML内容
+    // console.log(p.innerHTML);    // innerHTML 解析标签
+    
+    // const span_one = document.querySelector('#one')
+    // const span_two = document.querySelector('#two')
+    // const span_three = document.querySelector('#three')
+    // const spans = document.querySelectorAll('.wrapper .level span')   // 获取所有的span标签
+    // console.log(spans);
+    
+    // const arr = ['王大锤', '李二蛋', '张三', '李四', '王五', '赵六', '田七', '周八', '吴九', '郑十']
+    // const random = function(arr=[]){
+    //     const index = Math.floor(Math.random() * arr.length)
+    //     return index   // 随机选择一个数组元素，返回其索引值
+    // }
+    // for(let i = 0; i < 3; i++){
+    //     const index = random(arr)
+    //     spans[i].innerHTML = arr[index]
+    //     arr.splice(index,1)  // 删除数组中的一个元素
+    // }
+
+    // const arr = [
+    // "https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",
+    // "https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",
+    // "https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",
+    // "https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",
+    // "https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",
+    // "https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",
+    // "https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",
+    // "https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",
+    // "https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800"
+    // ]
+    // const random = function(arr=[]){
+    //     const index = Math.floor(Math.random() * arr.length)
+    //     return index   // 随机选择一个数组元素，返回其索引值
+    // }
+    // const ikun = document.querySelector('.ikun')
+    // const index = random(arr)
+    // ikun.src = arr[index]    // 修改图片的src属性
+    // ikun.title = '火影kun'
+    // ikun.width = 400
+
+    
+    // const box = document.querySelector('.box')  // 获取标签
+    // box.style.width = '400px'
+    // box.style.border = '2px solid blue'
+    // box.style.borderTop = '5px solid red'   // 小驼峰命名法
+
+    // const arr = [
+    // "https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",
+    // "https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",
+    // "https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",
+    // "https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",
+    // "https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",
+    // "https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",
+    // "https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",
+    // "https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",
+    // "https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800"
+    // ]
+    // const random = function(arr=[]){
+    //     const index = Math.floor(Math.random() * arr.length)
+    //     return index   // 随机选择一个数组元素，返回其索引值
+    // }
+    // const box = document.querySelector('.box')  // 获取标签
+    // const index = random(arr)
+    // box.style.backgroundImage = `url(${arr[index]})`    // 修改图片的src属性
+
+    // const nav = document.querySelector('.nav')
+    // // nav.className = 'box'    // 修改标签的class属性 （覆盖）
+    // nav.className = 'nav box'   
+
+    // 操作常用的属性    标签.属性名 = 值
+    // const nav = document.querySelector('.nav')
+    // nav.title = '这是一个导航栏'   // title
+
+    // 操作元素的样式
+    // // 1. 标签.style.样式名 = 值 （小驼峰命名法）
+    // const nav = document.querySelector('.nav')
+    // nav.style.color = 'red'   // color
+    // nav.style.backgroundColor = 'skyblue'   // backgroundColor
+    // nav.style.border = '2px solid blue'   // border
+    // nav.style.borderRadius = '10px'   // borderRadiu
+
+    // // 2. 标签.className = 'class1 class2 class3' （覆盖）
+    // const nav = document.querySelector('.nav')
+    // nav.className = 'box'   // class (覆盖原来的nav类)
+    // nav.className = 'nav box'   // class
+
+    //  3. 标签.classList.add('class1', 'class2', 'class3') （添加）
+    //     标签.classList.remove('class1', 'class2', 'class3') （删除）
+    //     标签.classList.toggle('class1', 'class2', 'class3') （切换） （添加或删除）
+    // const nav = document.querySelector('.nav')
+    // nav.classList.add('box')   // class (添加box类)
+    // nav.classList.remove('box')   // class (删除box类)
+    // toggle 切换 : 
+    // 如果有box类，就删除box类
+    // 如果没有box类，就添加box类
+    // nav.classList.toggle('box')   // class (切换box类) （添加或删除）
+
+    let ikun = [
+        // 源数据 （通常放在数据库中）
+    {src:"https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",p:'ikun01',color:'rgb(22,141,21)'},
+    {src:"https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",p:'ikun02',color:'rgb(54,21,61)'},
+    {src:"https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",p:'ikun03',color:'rgb(62,11,211)'},
+    {src:"https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",p:'ikun04',color:'rgb(222,11,21)'},
+    {src:"https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",p:'ikun05',color:'rgb(21,11,21)'},
+    {src:"https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",p:'ikun06',color:'rgb(222,141,21)'},
+    {src:"https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",p:'ikun07',color:'rgb(22,141,221)'},
+    {src:"https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",p:'ikun08',color:'rgb(122,11,121)'},
+    {src:"https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800",p:'ikun09',color:'rgb(82,71,91)'},
+    ]
+    // 随机取一个数组元素的下标
+    const random = function(arr=[]){
+        const index = Math.floor(Math.random()*arr.length)
+        return index
+    }
+    const index = random(ikun)
+    
+    // 设置整体背景颜色
+    const slider = document.querySelector('.slider')
+    slider.style.backgroundColor = ikun[index].color    // 小驼峰命名法
+    
+    // 设置图片
+    const slider_top = document.querySelector('.slider-top')
+    // slider_top_image.src = ikun[index].src
+    slider_top.style.backgroundImage = `url(${ikun[index].src})`
+
+    // 设置文字
+    const slider_bottom_text = document.querySelector('.slider-text')
+    slider_bottom_text.innerHTML = ikun[index].p
+
+    // 设置底部的小圆点
+    // const slider_bottom_li = document.querySelectorAll('.bot li')
+    // slider_bottom_li[index].classList.add('active')
+    const slider_bottom_li = document.querySelector(`.bot li:nth-child(${index+1})`)
+    slider_bottom_li.classList.add('active')
+
+    
+</script>
+</body>
+</html>
+

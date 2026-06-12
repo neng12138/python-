@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        p{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            color: black;
+            line-height: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>x</p>
+    </div>
+
+
+    <script>
+        // 消失的广告
+        const div = document.querySelector('div')
+        // 五秒后自动消失
+        let timer = setTimeout(function(){
+            div.style.display = 'none'
+        },5000)
+        // 手动点击消失
+        div.children[0].addEventListener('click',function(){
+            div.style.display = 'none'
+            clearTimeout(timer)     // 清除定时器
+        })
+
+    </script>
+</body>
+</html>
+

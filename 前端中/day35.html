@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px auto;
+        } */
+
+       /*  div{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+        div .child{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 0, 0,0.3);
+            border: none;
+            margin: 0;
+            display: none;
+        }*/
+
+    </style>
+</head>
+<body>
+    <!-- <input type="text" name="" id=""> -->
+
+    <!-- <div class="login"></div> -->
+
+    <!-- <div>
+        <div class="child"></div>
+    </div> -->
+    
+    
+    <script>
+        // // 事件类型change -- 元素的文本内容发生改变时触发（失焦）
+        // const input = document.querySelector("input");
+        // input.addEventListener("change", function(){
+        //     console.log('我的内容发生了改变'); 
+        // })
+
+        // const div = document.querySelector(".login");
+        // div.addEventListener("click", function(){
+        //     // console.log('我被点击了');
+        //     // 网页跳转
+        //     // 1. 直接修改location.href属性
+        //     // location.href = 'http://127.0.0.1:5500/前端/前端中/day34.html'
+        //     location.href = './day34.html'
+        // })
+        
+        // const child = document.querySelector(".child");
+        // const div = child.parentNode;
+        // div.addEventListener('mouseenter',function(){
+        //     child.style.display = 'block';  // 鼠标进入div时显示child
+        // })
+        // div.addEventListener('mouseleave',function(){
+        //     child.style.display = 'none';   // 鼠标离开div时隐藏child
+        // })
+        // function childMove(x,y){
+        //     child.style.left = x + 'px';
+        //     child.style.top = y + 'px';
+        // }
+        // // 事件类型mousemove -- 鼠标移动时触发
+        // div.addEventListener('mousemove',function(e){
+        //     // console.log(e.clientX, e.clientY);      // 鼠标在浏览器中的位置
+        //     // console.log(e.offsetX, e.offsetY);      // 鼠标在div中的位置
+        //     // 每次鼠标移动都改变child的位置
+        //     // 添加边界检查，防止child移出父元素
+        //     const x = Math.max(0, Math.min(e.offsetX - 75, div.offsetWidth - child.offsetWidth));
+        //     const y = Math.max(0, Math.min(e.offsetY - 75, div.offsetHeight - child.offsetHeight));
+        //     childMove(x,y);
+        // })
+
+        function outer(){
+            let count = 0   // 局部变量，不会被修改
+            function inner(){
+                count++;
+                console.log(`函数被调用了${count}次`);
+            }
+            return inner
+        }
+        // 闭包
+        const fn = outer();
+
+        const obj = {
+            name: '张三',
+            age: 18,
+            sayHi: () => {
+                console.log(this);
+            }
+        }
+        obj.sayHi()   // 输出Window对象
+
+    </script>
+</body>
+</html>
+
+

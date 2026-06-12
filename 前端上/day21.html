@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            width: 100px;                /* 宽度 */
+            text-align: center;          /* 文本对齐方式 */
+            display: inline-block;      /* 行内块元素 */
+            padding: 5px 10px;           /* 内边距 */
+            margin: 3px;                 /* 外边距 */
+            border: 2px solid pink;     /* 边框 */
+            border-radius: 5px;          /* 圆角 */ 
+            box-shadow: 2px 2px 2px rgba(255, 192, 192, 0.4);  /* 阴影 */
+            background-color: rgba(255, 192, 192, 0.1);      /* 背景颜色 */
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        // // while循环
+        // let num = 1
+        // while(num <= 10){
+        //     // document.write('月薪过万 <br>')
+        //     document.write('<h3>月薪过万</h3>')
+        //     num++
+        // }
+
+        // // 需求：让用户输入一个数字，然后循环输出这个数字的内容
+        // let num = +prompt('请输入你要循环的次数：')
+        // while(num > 0 ){
+        //     document.write('<h3>月薪过万</h3>')
+        //     num--
+        // }
+
+        // let my_str = prompt('你爱我吗？')
+        // while(my_str !== '爱'){
+        //     my_str = prompt('你爱我吗？')
+        // }
+
+        // while(true){
+        //     let my_str = prompt('你爱我吗？')
+        //     if(my_str === '爱'){
+        //         break
+        //     }
+        // }
+
+        // // 模拟ATM
+        // let money = 2000    // 定义一个变量，用于存储用户的存款
+        // let flag = true  // 定义一个变量，用于控制循环的执行
+        // while(flag){
+        //     let operation = prompt(`
+        //     请输入你要进行的操作:
+        //                   1.存款
+        //                   2.取款
+        //                   3.查询余额
+        //                   4.退出
+        //     `)
+        //     switch(operation){
+        //         case '1':
+        //             let deposit = +prompt('请输入你要存款的金额：')
+        //             money += deposit   // 存款后，将存款金额加到money变量中去，相当于money = money + deposit
+        //             alert(`存款成功，当前余额为：${money}`)
+        //             break
+        //         case '2':
+        //             let withdraw = +prompt('请输入你要取款的金额：')
+        //             if(withdraw > money){
+        //                 alert(`余额不足，当前余额为：${money}`) 
+        //             }
+        //             else{
+        //                 money -= withdraw   // 取款后，将取款金额从money变量中减去，相当于money = money - withdraw
+        //                 alert(`取款成功，当前余额为：${money}`)
+        //             }
+        //             break
+        //         case '3':
+        //             alert(`当前余额为：${money}`)
+        //             break
+        //         case '4':
+        //             alert(`退出成功`)
+        //             flag = false   // 将flag变量的值改为false，跳出循环
+        //     }
+        // }
+
+        // let num1 = +prompt('请输入第一个数字：')
+        // let num2 = +prompt('请输入第二个数字：')
+        // let max = num1 > num2 ? num1 : num2 // 三元表达式，用于判断两个数字中的最大值
+        // alert(`两个数字中的最大值为：${max}`)
+        
+        // let num = +prompt('请输入一个数字：')
+        // let sum = 0   // 定义一个变量，用于存储累加的结果
+        // while(num > 0){
+        //         sum += num
+        //         num--
+        // }
+        // alert(`累加的结果为：${sum}`)
+
+        // let score = +prompt('请输入你的成绩：')
+        // if(score >= 90){
+        //     alert('A')
+        // }
+        // else if(score >= 80){
+        //     alert('B')
+        // }
+        // else if(score >= 70){
+        //     alert('C')
+        // }
+        // else if(score >= 60){
+        //     alert('D')
+        // }
+        // else{
+        //     alert('E') 
+        // }
+        
+        // while(true){
+        //     let operation = prompt(`
+        //         1.输入+-*/计算两个数的结果
+        //         2.如果输入q则是退出
+        //     `)
+        //     if (operation === 'q'){
+        //             break
+        //     }
+        //     else if(operation === '+' || operation === '-' || operation === '*' || operation === '/'){
+        //             let num1 = +prompt('请输入第一个数字：')
+        //             let num2 = +prompt('请输入第二个数字：')
+        //             switch(operation){
+        //                 case '+':
+        //                     alert(`两个数字的和为：${num1 + num2}`)   // 输出两个数字的和，使用模板字符串拼接
+        //                     break
+        //                 case '-':
+        //                     alert(`两个数字的差为：${num1 - num2}`)   // 输出两个数字的差，使用模板字符串拼接
+        //                     break
+        //                 case '*':
+        //                     alert(`两个数字的积为：${num1 * num2}`)   // 输出两个数字的积，使用模板字符串拼接
+        //                     break
+        //                 case '/':
+        //                     alert(`两个数字的商为：${num1 / num2}`)   // 输出两个数字的商，使用模板字符串拼接
+        //             }
+        //     }   
+        // }
+
+        // // 循环嵌套
+        // // 需求：打印5*5的矩形
+        // for(let i = 0; i < 5 ; i++){    // 外层循环，控制行数
+        //     for(let j = 0; j < 5; j++){     // 内层循环，控制每行的列数
+        //         document.write('⭐') 
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+
+        // let row = +prompt('请输入你要打印的行数：')
+        // let col = +prompt('请输入你要打印的列数：')
+        // for(let i = 0; i < row ; i++){    // 外层循环，控制行数
+        //     for(let j = 0; j < col; j++){     // 内层循环，控制每行的列数
+        //         document.write('⭐') 
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+
+        // for(let i = 0; i < 5; i++){
+        //     for(let j = 0; j < i+1; j++){
+        //         document.write('⭐')
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+        // for(let i = 1; i <= 5; i++){
+        //     for(let j = 1; j <= i; j++){
+        //         document.write('⭐')
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+
+        // for(let i = 5; i > 0; i--){
+        //     for(let j = 0; j < i; j++){
+        //         document.write('⭐')
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+
+        // 正九九乘法表
+        for(let i = 1; i <= 9; i++){
+            for(let j = 1; j <= i; j++){
+                // &nbsp  用于在页面中添加空格
+                // document.write(`<span>${j} * ${i} = ${i*j} &nbsp&nbsp</span>`)   // 输出乘法表，使用模板字符串拼接
+                document.write(`<span>${j} * ${i} = ${i*j}</span>`)   // 输出乘法表，使用模板字符串拼接
+            }
+            document.write('<br>')  // 换行
+        }
+
+        // 反九九乘法表
+        // for(let i = 9; i >= 1; i--){
+        //     for(let j = 1; j <= i; j++){
+        //         // &nbsp  用于在页面中添加空格
+        //         document.write(`<span>${j} * ${i} = ${i*j} &nbsp&nbsp</span>`)   // 输出乘法表，使用模板字符串拼接
+        //     }
+        //     document.write('<br>')  // 换行
+        // }
+
+        
+
+
+    </script>
+</body>
+</html>
+
+
+

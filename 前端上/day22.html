@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* span{
+            display: inline-block;  行内块元素
+            width: 100px;
+            text-align: center;
+            margin: 5px;
+            padding: 3px 5px;
+            border: 2px solid rgb(135, 206, 235);    边框
+            border-radius: 5px;
+            background-color: rgba(133,206,235, 0.4);
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        } */
+
+        .box{
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 2px solid pink;
+            border-bottom: 2px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+        .bar{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 80px;
+            background-color: pink;
+        }
+        .num{
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: -30px;
+        }
+        .section{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: -35px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- <div class="box">
+        <div class="bar" style="height: 120px;">
+            <span class="num">120</span>
+            <span class="section">第一季度</span>
+        </div>
+        <div class="bar" style="height: 50px;">
+            <span class="num">50</span>
+            <span class="section">第二季度</span>
+        </div>
+        <div class="bar" style="height: 90px;">
+            <span class="num">90</span>
+            <span class="section">第三季度</span>
+        </div>
+        <div class="bar" style="height: 220px;">
+            <span class="num">220</span>
+            <span class="section">第四季度</span>
+        </div>
+    </div> -->
+    
+    <script>
+        // // 正九九乘法表
+        // for (let i = 1; i <= 9; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(`<span>${j} * ${i} = ${i * j}</span>`);
+        //     }
+        //     document.write("<br>"); // 换行
+        // }
+
+        // for(let i = 1 ; i <= 4; i++){
+        //     let num = +prompt(`请输入第${i}个季度的销售额：`);
+        //     // DOM操作 ： 动态创建
+        //     document.querySelector('.box').innerHTML += `
+        //         <div class="bar" style="height: ${num}px;">
+        //             <span class="num">${num}</span>
+        //             <span class="section">第${i}季度</span>
+        //         </div>
+        //     `
+        // }
+
+        // let arr = []
+        // for(let i = 1 ; i <= 5; i++){
+        //     while(true){
+        //         let num = +prompt(`请输入有效年龄( 1-100 ): `);
+        //         if(num >= 1 && num <= 100){
+        //                 arr.push(num);
+        //                 break;
+        //         }
+        //     }
+        // }
+        // alert(`输入的有效年龄为：${arr}`);
+        // let total = 0
+        // for(let i = 0 ; i < arr.length; i++){
+        //     total += arr[i];
+        // }
+        // alert(`输入的有效年龄的总年龄是：${total}`)
+        // alert(`输入的有效年龄的平均值是：${total/arr.length}`)
+        // arr.sort((a,b) => a - b);  // 升序排序
+        // let max = arr[arr.length - 1];
+        // let min = arr[0];
+        // alert(`输入的有效年龄的最大值是：${max}`)
+        // alert(`输入的有效年龄的最小值是：${min}`)
+
+        // function add_two(){        // 函数
+        //     let num1 = +prompt(`请输入第一个数字：`);
+        //     let num2 = +prompt(`请输入第二个数字：`);
+        //     alert(`两个数字的和是：${num1 + num2}`);
+        // }
+        // add_two();    // 函数调用
+
+        function getSum(num1 , num2){   
+            alert(`两个数字的和是：${num1 + num2}`);
+        }
+        let num1 = +prompt(`请输入第一个数字：`);
+        let num2 = +prompt(`请输入第二个数字：`);
+        getSum(num1, num2);    // 函数调用    传参
+
+    </script>
+</body>
+</html>
+
+

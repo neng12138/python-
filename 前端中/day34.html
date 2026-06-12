@@ -1,0 +1,365 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            display: flex;
+        }
+        input{
+            margin:15px;
+            width: 180px;
+            height: 20px;
+            outline: none;
+        }
+        .wrong p{
+            color: red;
+            margin-top: 12px;
+        }
+        .correct p{
+            color: rgb(40, 210, 40);
+            margin-top: 12px;
+        }
+        .wrong,.correct{
+            display: none;
+        } */
+
+        /* *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 600px;
+            height: 150px;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea{
+            margin-top: 50px;
+            width: 300px;
+            height: 150px;
+            outline: none;
+            resize: none;
+        }
+        button{
+            position: absolute;
+            right: 10%;
+            top: 80%;
+            width: 70px;
+            height: 30px;
+            font-size: 20px;
+            color: white;
+            background-color: rgb(80, 82, 228);
+            border: none;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .text{
+            background-color: pink;
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            margin: 20px auto;
+        }*/
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 1000px;
+            height: 700px;
+            background-color: rgba(203, 204, 205,0.3);
+            margin: 100px auto;
+        }
+        .box h1{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            color: rgba(0, 0, 0,0.7);
+        }
+        form{
+            position: absolute;
+            left: 210px;
+            top: 80px;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        form input{
+            margin-left: -20px;
+            width: 210px;
+            height: 28px;
+            outline: none;
+            font-size: 13px;
+        }
+        #read{
+            width: 20px;
+            height: 20px;
+        }
+        .text{
+            margin-left: 10px;
+            margin-top: -28px;
+        }
+        .submit{
+            width: 210px;
+            height: 50px;
+            background-color: rgb(133, 203, 77);
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            color: white;
+            font-size: 16px;
+            line-height: 50px;
+            outline: none;
+        }
+        form>p{
+            display: none;
+            position: absolute;
+            left: 405px;
+            color: rgba(255, 0, 0,0.6);
+            font-size: 13px;
+        }
+        .uname{
+            top: 30px;
+        }
+        .phone{
+            top: 115px;
+        }
+       .emailnum{
+            top: 200px;
+        }
+       .pwd{
+            top: 285px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        <form action="" autocomplete="off">
+            <input type="text" name="uname" id="uname">
+            <div class="wrong">
+                <p>用户名格式错误</p>
+            </div>
+            <div class="correct">
+                <p>用户名格式正确</p>
+            </div>
+        </form>
+    </div> -->
+    
+    <!-- <div class="box">
+        <textarea name="" id=""></textarea>
+        <button>发布</button>
+    </div>
+    <div class="comment">
+    </div> -->
+
+    <div class="box">
+        <h1 class="title">新用户注册</h1>
+        <form action="" autocomplete="off">
+            <input type="text" name="uname" id="uname" placeholder="设置用户名称">
+            <p class="uname">昵称长度为6至10个字符</p>
+            <input type="text" name="phone" id="phone" placeholder="输入手机号码">
+            <p class="phone">请输入正确的手机号</p>
+            <input type="text" name="emailnum" id="emailnum" placeholder="短信验证码">
+            <p class="emailnum">请输入正确的验证码</p>
+            <input type="password" name="pwd" id="pwd" placeholder="设置6至20位字母,数字和符号组合">
+            <p class="pwd">设置6至20位字母,数字和符号组合</p>
+            <input type="password" name="pwdAgin" id="pwdAgin" placeholder="请再次输入上面密码">
+            <div>
+                <input type="checkbox" name="read" id="read">
+                <p class="text">
+                    <span>已阅读并同意</span>
+                    <span style="color: rgb(133, 203, 77);"> <用户服务协议> </span>
+                </p>
+            </div>
+            <button class="submit">下一步</button>
+        </form>
+    </div>
+
+    <script>
+        // // 用户名验证（用字母，数字，下划线，横杆，一共6~16位）
+        // const reg = /^[a-zA-Z0-9_-]{6,16}$/     // （正则表达式）
+        // while(true){
+        //     const uname = prompt('请输入用户名')
+        //     if(reg.test(uname)){
+        //         alert('成功创建用户')
+        //         console.log(uname)   // 再控制台输出用户名
+        //         break   // 退出循环
+        //     }
+        //     else{
+        //         alert('用户名格式错误')
+        //     }
+        // }
+
+        // const reg = /^[a-zA-Z0-9_-]{6,16}$/
+        // const text = document.querySelector('#uname')
+        // const wrong = text.nextElementSibling
+        // const correct = wrong.nextElementSibling
+        // text.addEventListener('focus',function(){
+        //     wrong.style.display = 'none'       // 隐藏
+        //     correct.style.display = 'none'          // 隐藏
+        // })
+        // text.addEventListener('blur',function(){
+        //     if(text.value === '') return
+        //     if(reg.test(text.value)){
+        //         correct.style.display = 'block'     // 显示
+        //     }
+        //     else{
+        //         wrong.style.display = 'block'     // 显示
+        //     }
+        // })
+
+        // const reg = /激情|基情/g
+        // const str = 'pink老师上课十分有激情'
+        // const newStr = str.replace(reg,'**')
+        // console.log(newStr);
+        
+        // const te = document.querySelector('textarea')
+        // const btn = document.querySelector('button')
+        // const div = document.querySelector('.comment')
+        // // 过滤敏感词
+        // btn.addEventListener('click',function(){
+        //     const text = te.value.replace(/激情|基情|操/g,'**')
+        //     te.value = ''
+        //     const newDiv = document.createElement('div')
+        //     newDiv.className = 'text'
+        //     newDiv.innerHTML = text
+        //     div.appendChild(newDiv)
+        // })
+
+        const uname = document.querySelector('#uname')
+        // 用户名验证（用字母，数字，下划线，横杆，一共6~10位）
+        function testUname(){
+            const reg = /^[a-zA-Z0-9_-]{6,10}$/
+            if(!reg.test(uname.value)){
+                document.querySelector('.uname').style.display = 'block'
+                return false
+            }
+            else{
+                document.querySelector('.uname').style.display = 'none'
+                return true
+            }
+        }
+        uname.addEventListener('change',testUname)
+
+        const phone = document.querySelector('#phone')
+        // 手机号验证（1开头，第二位3-8，后面9位）
+        function testPhone(){
+            const reg = /^[1][3-8][0-9]{9}$/
+            if(!reg.test(phone.value)){
+                document.querySelector('.phone').style.display = 'block'
+                return false
+            }
+            else{
+                document.querySelector('.phone').style.display = 'none'
+                return true
+            }
+        }
+        phone.addEventListener('change',testPhone)
+
+        const emailnum = document.querySelector('#emailnum')
+        // 验证码验证（6位数字）
+        function testEmailnum(){
+            const reg = /^[0-9]{6}$/
+            if(!reg.test(emailnum.value)){
+                document.querySelector('.emailnum').style.display = 'block'
+                return false
+            }
+            else{
+                document.querySelector('.emailnum').style.display = 'none'
+                return true
+            }
+        }
+        emailnum.addEventListener('change',testEmailnum)
+
+        const pwd = document.querySelector('#pwd')
+        // 密码验证（6-20位，字母，数字，下划线）
+        function testPwd(){
+            const reg = /^[a-zA-Z0-9_]{6,20}$/
+            if(!reg.test(pwd.value)){
+                document.querySelector('.pwd').style.display = 'block'
+                return false
+            }
+            else{
+                document.querySelector('.pwd').style.display = 'none'
+                return true
+            } 
+        }
+        pwd.addEventListener('change',testPwd)
+
+        // 调用所有验证
+        function blurAll(){
+            let flag = false
+            // 验证
+            if(testUname() & testPhone() & testEmailnum() & testPwd()){
+                flag = true
+            }
+            return flag
+        }
+
+        const pwdAgin = document.querySelector('#pwdAgin')
+        // 勾选后的验证
+        function check(e){
+            if(blurAll() && pwdAgin.value === pwd.value){
+                // 验证通过
+                alert('注册成功')
+                clear()
+            }
+            else{
+                // 验证不通过
+                e.preventDefault()  // 阻止提交
+                alert('密码或验证未通过')
+            }
+        }
+
+        // 表单清空
+        function clear(){
+            const form = document.querySelector('form')
+            form.reset()   // 重置表单
+        }
+
+        const submit = document.querySelector('.submit')
+        const read = document.querySelector('#read')
+        // 设置提交事件
+        submit.addEventListener('click',function(e){
+            if(!read.checked){
+                // 无勾选已阅读
+                e.preventDefault()  // 阻止提交
+                alert('请先阅读用户协议')
+                // 验证
+                blurAll()    
+            }
+            else{
+                // 勾选
+                check(e)
+            }
+        })
+
+
+    </script>
+</body>
+</html>
+
+

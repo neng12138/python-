@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .production{
+            text-align: center;
+            margin: 0 auto; /* 水平居中 */ 
+        }
+
+        .item,h1{
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            margin: 0 auto; /* 水平居中 */
+        }
+        th,td{
+            width: 150px;
+            height: 30px;
+        }
+        .ad{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="production"> -->
+        <!-- <h1>订单确定</h1> -->
+        
+    <!-- </div> -->
+    
+
+    <script>
+        // let r = prompt("Enter the radius of the circle:") // Prompt user to enter radius
+        // const PI = 3.14
+        // document.write(`circle area is ${PI * r * r}`)
+
+        // let uname = prompt('请输入你的名字：')
+        // let age = prompt('请输入你的年龄：')
+        // // 模板字符串 ： 外面用反引号`` ，里面用${}
+        // document.write(` 大家好，我是${uname}, 我今年${age}岁了！`)
+
+        // let num1 = +prompt('请输入第一个数字：')  // + 号可以将字符串转化为数字类型
+        // let num2 = +prompt('请输入第二个数字：')
+        // alert(`num1 + num2 = ${num1 + num2}`)
+
+        // let num1 = Number(prompt('请输入第一个数字：')) // Number() 可以将字符串转化为数字类型
+        // let num2 = Number(prompt('请输入第二个数字：'))
+        // alert(`num1 + num2 = ${num1 + num2}`)
+
+        // let goods = prompt('请输入商品名称：')
+        // let price = +prompt('请输入商品价格：')
+        // let number = +prompt('请输入商品数量：')
+        // let total_price = price * number
+        // let address = prompt('请输入收货地址：')
+
+        // document.querySelector('.goods').innerHTML = goods
+        // document.querySelector('.price').innerHTML = price + '元'
+        // document.querySelector('.number').innerHTML = number
+        // document.querySelector('.all_price').innerHTML = total_price + '元'
+        // document.querySelector('.address').innerHTML = address
+        
+        // document.write(`
+        //     <table class="item" border="2px" cellspacing="0">
+        //         <tr>
+        //             <th>商品名称</th>   
+        //             <th>商品价格</th>
+        //             <th>商品数量</th>
+        //             <th>总价</th>
+        //             <th class="ad">收货地址</th>
+        //         </tr>
+        //         <tr>
+        //             <td class="goods" >${goods}</td>
+        //             <td class="price" >${price}元</td>
+        //             <td class="number" >${number}</td>
+        //             <td class="all_price" >${total_price}元</td>
+        //             <td class="address" >${address}</td>
+        //         </tr>
+        //     </table>
+        // `)
+
+        // let uname = prompt('请输入你的名字：')
+        // let age = prompt('请输入你的年龄：')
+        // let gender = prompt('请输入你的性别：')
+        // console.log(`用户的名字是：${uname}`);
+        // console.log(`用户的年龄是：${age}`);
+        // console.log(`用户的性别是：${gender}`);
+        
+        // let age = +prompt('请输入你的年龄：')
+        // console.log(`你再过5年后, 你的年龄是：${age + 5}`);
+        
+        // let num = +prompt('请输入一个数字：')
+        // if(num % 4 === 0 && num % 100 !== 0){
+        //         alert(`true`)
+        // }
+        // else{
+        //     alert(`false`)
+        // }
+
+        // let num = +prompt('请输入一个数字：')
+        // alert(num % 4 === 0 && num % 100 !== 0) // 三元表达式  条件 ? 条件成立的结果 : 条件不成立的结果
+        
+        // let score = +prompt('请输入你的分数：')
+        // if(score > 700){    
+        //     alert(`成功考入黑马大学`)
+        // }
+
+        // let uname =  prompt('请输入你的名字：')
+        // let password = prompt('请输入你的密码：')
+        // if(uname === 'admin' && password === '123456'){
+        //     alert(`欢迎${uname}登录`)
+        // }
+        // else{
+        //     alert(`用户名或密码错误`)
+        // }
+
+        // let year = +prompt('请输入年份：')
+        // if(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0){
+        //     alert('今年是闰年')
+        // }
+        // else{
+        //     alert('今年是平年')
+        // }
+
+        // let score = +prompt('请输入你的分数：')
+        // if(score >= 90){
+        //     alert(`${score}分是优秀`)
+        // }
+        // else if(score >= 70){
+        //     alert(`${score}分是良好`)
+        // }
+        // else if(score >= 60){
+        //     alert(`${score}分是及格`)
+        // }
+        // else{
+        //     alert(`${score}分是不及格`)
+        // }
+
+        // console.log(3 < 5 ? 3 : 5); // 3
+        // 3 < 5 ? alert(3) : alert(5) // 3
+        // let num = 3 < 5 ? 3 : 5 
+        // console.log(num); // 3
+        
+        // let num1 = +prompt('请输入第一个数字：')
+        // let num2 = +prompt('请输入第二个数字：')
+        // // alert(`最大的值是：${num1 > num2 ? num1 : num2}`)
+        // num1 > num2? alert(`最大的值是：${num1}`) : alert(`最大的值是：${num2}`) // 三元表达式  条件? 条件成立的结果 : 条件不成立的结果
+
+        // let num = +prompt('请输入一个数字：')
+        // alert(`您输入的数字是：${num >= 10? num : '0'+num}`) // 三元表达式  条件? 条件成立的结果 : 条件不成立的结果
+
+        // let num = +prompt('请输入一个数字：')
+        // num = num >= 10? num : '0'+num   
+        // alert(`您输入的数字是：${num}`) // 三元表达式  条件? 条件成立的结果 : 条件不成立的结果
+
+        let num1 = +prompt('请输入第一个数字：')
+        let num2 = +prompt('请输入第二个数字：')
+        let item = prompt('请输入要进行的运算（+-*/）: ')
+        switch (item) {
+            case '+':
+                alert(`您要的结果是：${num1 + num2}`) 
+                break; 
+            case '-':
+                alert(`您要的结果是：${num1 - num2}`) 
+                break;
+            case '*':
+                alert(`您要的结果是：${num1 * num2}`) 
+                break;
+            case '/':
+                alert(`您要的结果是：${num1 / num2}`) 
+                break;
+            default:
+                alert(`您输入的运算符号有误`) 
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+

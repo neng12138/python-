@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span{
+            color: red;
+        } */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+                width: 1000px;
+                height: 500px;
+                margin: 100px auto;
+        }
+        .top{
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+        .top-title{
+            position: absolute;
+            top: 5%;
+            left: 41%;
+            font-size: 40px;
+        }
+        .add{
+            position: absolute;
+            bottom: 30%;
+            left: -5px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .add input,select{
+            outline: none;
+            width: 100px;
+            height: 30px;
+            border: 1px solid rgb(9, 112, 153);
+            border-radius: 7px;
+            margin-right: 25px;
+            margin-left: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 550;
+        }
+        .add #age,select{
+            width: 80px;
+        }
+        .add h3{
+            font-size: 20px;
+            font-weight: 250px;
+        }
+        .add .submit{
+            width: 70px;
+            height: 30px;
+            background-color: rgb(7, 9, 138);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+            border:none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .bottom{
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+       .bottom-title{
+            position: absolute;
+            top: 5%;
+            left: 43%;
+            font-size: 40px;
+        }
+        .bottom table{
+            position: absolute;
+            top: 35%;
+            left: -5%;
+            width: 110%;
+            border: 1px solid rgba(164, 165, 166,0.5);
+            text-align: center;
+            font-size: 20px;
+            font-weight: 550;
+        }
+        .bottom table tr:first-child{
+            background-color: rgb(168, 209, 226);
+        }
+       .bottom table tr{
+            height: 60px;
+        }
+        .bottom table tr:not(:first-child):hover{
+            background-color: rgba(208, 209, 209, 0.3);
+        }
+        .bottom table tr td.remove{
+            color: rgb(7, 9, 138);
+            text-decoration: underline;
+            text-decoration-color: rgb(7, 9, 138);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <a href="https://www.baidu.com">支付成功<span>5</span>秒后跳转回网页</a> -->
+
+    <!-- <form action="">
+        <input type="text" name="username" id="">
+        <input type="text" name="pwd" id="">
+        <button>提交</button>
+    </form>
+
+    <a href="#/my">我的</a>
+    <a href="#/friend">关注</a>
+    <a href="#/download">下载</a> -->
+
+    <!-- <button class="reload">刷新</button> -->
+     
+    <div class="box">
+        <div class="top">
+            <h1 class="top-title">新增学员</h1>
+            <div class="add">
+                <h3>姓名:</h3>
+                <input type="text" id="name">
+                <h3>年龄:</h3>
+                <input type="text" id="age">
+                <h3>性别:</h3>
+                <select id="gender">
+                    <option selected>男</option>
+                    <option>女</option>
+                </select>
+                <h3>薪资:</h3>
+                <input type="text" id="salary">
+                <h3>就业城市:</h3>
+                <select id="city">
+                    <option  selected>北京</option>
+                    <option >广州</option>
+                    <option >浙江</option>
+                    <option >海南</option>
+                    <option >珠海</option>
+                </select>
+                <button class="submit">录入</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <h1 class="bottom-title">就业榜</h1>
+            <table cellspacing="0" border="1px solid rgba(14, 123, 196,0.5)">
+                <tr>
+                    <td>学号</td>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>性别</td>
+                    <td>薪资</td>
+                    <td>就业城市</td>
+                    <td>操作</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // // location对象： URL地址信息
+        // console.log(location);
+
+        // // location.href: 完整的URL地址
+        // console.log(location.href);
+
+        // // location.href的赋值  （通过js的方式进行的网页跳转）
+        // location.href = 'https://www.baidu.com'
+
+        // const span = document.querySelector('span')
+        // let num = 5
+        // let timer = setInterval(function(){
+        //         num--
+        //         span.innerHTML = num
+        //         if(num === 0){
+        //             clearInterval(timer)
+        //             // 五秒后自动跳转
+        //             location.href = 'https://www.baidu.com'
+        //         }
+        // },1000)
+
+        // const reload = document.querySelector('.reload')
+        // reload.addEventListener('click',function(){
+        //     // 刷新当前页面
+        //     location.reload()
+        // })
+
+        // const obj = {
+        //     uname:'pink老师',
+        //     age:18,
+        //     gender:'女'
+        // }
+        // // js对象 -> JSON字符串 : JSON.stringify()
+        // localStorage.setItem('obj',JSON.stringify(obj))  // 存储对象  （存储的是字符串）
+        // console.log(localStorage.getItem('obj'))    // JSON字符串
+        // // JSON字符串 -> js对象 : JSON.parse()
+        // console.log(JSON.parse(localStorage.getItem('obj')))    // js对象
+        // // localStorage.removeItem('obj')  // 删除指定的键值对
+
+        const add = document.querySelector('.top .add')  // 输入栏对象
+        const table = document.querySelector('.bottom table')  // 表格对象
+    
+        // 初始化本地存储（开辟存储空间）
+        if(localStorage.getItem('arr') === null){
+            localStorage.setItem('arr',JSON.stringify([]))    // 设置空数组
+        }
+ 
+        // 本地存储中的数据 
+        const arr = JSON.parse(localStorage.getItem('arr'))
+
+        // 设置学号   （每次点击后加1）
+        // let num = 1001   
+        // if(arr.length !== 0){
+        //     // 如果是通过本地存储渲染的，则学号为本地存储中的最后一个学号加1
+        //     num = arr[arr.length-1].num + 1   
+        // }
+        let num = arr.length ? arr[arr.length-1].num + 1 : 1001   // 三元表达式
+
+
+        // 清空录入框
+        function clear(){
+            add.children[1].value = ''    // name
+            add.children[3].value = ''     // age
+            add.children[5].value = '男'   // gender
+            add.children[7].value = ''     // salary
+            add.children[9].value = '北京' // city
+            // 方式二： form.reset()  （form表单的重置方法）
+        }
+
+
+        // 检查数据是否可以提交 （可以提交返回true,否则返回false）
+        function check(){
+            let flag = true;    // 假设数据是可以提交的
+            if(!add.children[1].value || !add.children[3].value || !add.children[7].value){
+                    // 如果姓名、年龄、薪资其中一个有空值，则数据不可提交
+                    alert(' 数据不能为空！');
+                    flag = false;    // 数据不可提交
+            }
+            return flag;    // 返回flag
+        }
+        
+
+        // 追加数据 （ 成功录入 ）
+        function addData(){
+            const obj = {
+                num:num,
+                name:add.children[1].value,
+                age:add.children[3].value,
+                gender:add.children[5].value,
+                salary:add.children[7].value,
+                city:add.children[9].value
+            }
+            num++    // 学号加1
+            arr.push(obj)    // 存储所有数据（追加在结尾）
+            localStorage.setItem('arr',JSON.stringify(arr))    // 修改本地存储
+            design()    // 重新渲染
+        }
+
+
+        // 删除事件（立即执行函数）
+        !function cancel(){
+            // 事件委托
+            table.addEventListener('click',function(e){
+                if(e.target.className === 'remove'){
+                    // 删除的二次判断
+                    if(confirm('是否确定删除？')){  
+                        // 删除在数组中指定的元素
+                        arr.splice(e.target.dataset.id,1)    // 删除指定的元素
+                        localStorage.setItem('arr',JSON.stringify(arr))    // 修改本地存储
+                        design()    // 重新渲染
+                    }          
+                }
+            })
+        }()
+
+        
+        // 渲染 （渲染数组中的数据）
+        function design(){
+            // 清空table中的数据
+            table.innerHTML = `
+                        <tr>
+                            <td>学号</td>
+                            <td>姓名</td>
+                            <td>年龄</td>
+                            <td>性别</td>
+                            <td>薪资</td>
+                            <td>就业城市</td>
+                            <td>操作</td>
+                        </tr>`    
+            // 渲染数据（本地存储）
+            for(let i = 0; i < arr.length; i++){
+                const tr = document.createElement('tr');    // 创建新节点tr
+                tr.innerHTML = `
+                        <td>${arr[i].num}</td>
+                        <td>${arr[i].name}</td>
+                        <td>${arr[i].age}</td>
+                        <td>${arr[i].gender}</td>
+                        <td>${arr[i].salary}</td>
+                        <td>${arr[i].city}</td>
+                        <td class="remove" data-id="${i}">删除</td>`
+                table.appendChild(tr);    // 追加新节点tr到table末尾
+            }
+        }
+
+
+        // 初始化页面（立即执行函数）
+        (function init(){
+            // 检查本地存储是否有数据
+            if(arr.length === 0){
+                // 如果本地存储中没有数据，则不执行下面的代码
+                    return    
+            }
+            design()    // 渲染
+        })()
+        
+
+        // 录入事件（立即执行函数）
+        !function submit(){
+            const submit = add.children[10]  // 提交按钮对象
+            submit.addEventListener('click',function(){
+            // 检查数据是否可以提交
+                if(check()){
+                    // 追加在table中
+                    addData()
+                    // 录入框清空
+                    clear()
+                }            
+            })
+        }()
+        
+
+    </script>
+</body>
+</html>
+

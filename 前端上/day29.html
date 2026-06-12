@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            padding-top: 100px;
+            height: 2000px;
+        }
+        div{
+            display: none;
+            margin: 100px;
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        } */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 0 auto;
+            width: 1300px;
+            height: 2000px;
+            display: flex;
+        }
+        .main{
+            position: relative;
+            width: 1200px;
+            height: 100%;
+            background-color: skyblue;
+        }
+         .left-nav{
+            opacity: 0;
+            transition: all 0.5s;
+            position: fixed;
+            right: 240px;
+            top: 22%;
+            width: 100px;
+            height: 400px;
+         }
+         .left-nav div{
+            text-align: center;
+            line-height: 100px;
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+         }
+         .left-nav div:nth-child(1){
+            background-color: rgb(172, 174, 175);
+         }
+        .left-nav div:nth-child(2){
+            background-color: pink;
+         }
+        .left-nav div:nth-child(3){
+            background-color: slateblue;
+         }
+        .left-nav div:nth-child(4){
+            background-color: green;
+         }
+        .left-nav div:hover{
+            color: rgb(255, 0, 0, 0.6);
+            text-decoration-line: underline;
+            text-decoration-color: rgb(255, 0, 0, 0.6);
+        }
+        .location{
+            position: absolute;
+            left: 16%;
+            top: 25%;
+            width: 800px;
+            height: 400px;
+            background-color: salmon;
+        }
+        .title-nav{
+            position: fixed;
+            top: -82px;
+            width: 100%;
+            height: 80px;
+            background-color: rgb(224, 47, 156);
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            border-bottom: 2px solid darkblue;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+        
+        /* div{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            padding: 10px;
+            border: 2px solid red;
+        } */
+
+        /* div{
+            position: relative;
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        p{
+            margin-left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <!-- <form action="https://www.baidu.com">
+        <input type="submit" value="点击提交">
+    </form>
+    <a href="https://www.baidu.com">百度一下</a> -->
+
+    <!-- <div>
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+        我成了，哈哈哈.我成了，哈哈哈.
+    </div> -->
+    
+    <div class="title-nav">我是顶部导航栏</div>
+    <div class="box">
+        <div class="main">
+            <div class="location"></div>
+        </div>
+        <div class="left-nav">
+            <div class="title-1" data-top="0">顶部</div>
+            <div class="title-2" data-top="250">title-2</div>
+            <div class="title-3" data-top="700">title-3</div>
+            <div class="title-4" data-top="900">底部</div>
+        </div>
+    </div>
+    
+    <!-- <div></div> -->
+
+    <!-- <div>
+        <p></p>
+    </div> -->
+
+    <script>
+        // const form = document.querySelector('form');
+        // form.addEventListener('submit',function(e){
+        //     e.preventDefault();  //阻止元素的默认行为
+        // })
+        // const a = document.querySelector('a');
+        // a.addEventListener('click',function(e){
+        //     e.preventDefault();  //阻止元素的默认行为
+        // })
+
+        // // 监听整个页面的滚动
+        // window.addEventListener('scroll',function(){
+        //     console.log('滚动条滚动了');
+        // })
+        // // 监听div的滚动
+        // const div = document.querySelector('div');
+        // div.addEventListener('scroll',function(){
+        //     // console.log('div滚动了');
+        //     console.log(div.scrollTop);     // 被卷去的头部距离
+        // })
+
+        // // 监听网页的滚动（伴随元素的显示于隐藏）
+        // const div = document.querySelector('div')
+        // document.documentElement.scrollTop = 100  // 滚动到页面的100px的位置
+        // window.addEventListener('scroll',function(){
+        //         const n = document.documentElement.scrollTop  // 被卷去的头部距离
+        //         if(n >= 100){
+        //             div.style.display = 'block'    // 显示div
+        //         }else{
+        //             div.style.display = 'none'     // 隐藏div
+        //         }
+        // })
+
+        // 电梯导航 
+        // 监听网页的滚动（伴随元素的显示于隐藏）
+        const html = document.documentElement    // html标签的对象
+        const left_nav = document.querySelector('.box .left-nav');
+        const title_nav = document.querySelector('.title-nav');
+
+        const location_top = document.querySelector('.main .location');
+        const box = document.querySelector('.box');
+        const locationTop = location_top.offsetTop + box.offsetTop;  // 元素的顶部距离
+        // 监听网页的滚动（伴随元素的显示与隐藏）
+        window.addEventListener('scroll',function(){
+            const n = html.scrollTop;  // 被卷去的顶部距离
+            // left_nav.style.opacity = n >= 250 ? 1 : 0;
+
+            // 侧边导航栏的显示与隐藏
+            left_nav.style.opacity = n+80 >= locationTop? 1 : 0;
+            // 顶部导航栏的显示与隐藏
+            title_nav.style.top = n+120 >= locationTop? '0px' : '-82px';
+        })
+        // 事件委托（将事件绑定在父元素上，通过事件对象的target属性来判断事件源）
+        left_nav.addEventListener('click',function(e){
+            // console.log(typeof e.target.dataset.top)    // string
+            const top = +e.target.dataset.top;  // 被卷去的头部距离
+            html.scrollTop = top  // 滚动到页面的指定位置
+        })
+
+        // const div = document.querySelector('div');
+        // // clientWidth和clientHeight : 元素的宽度和高度（不包含边框border）
+        // // offsetWidth和offsetHeight : 元素的宽度和高度（包含边框border）
+        // console.log(div.clientWidth);  // 元素的宽度
+        // console.log(div.clientHeight);  // 元素的高度
+        // console.log(div.offsetWidth);  // 元素的宽度
+        // console.log(div.offsetHeight);  // 元素的高度
+        
+        // const div = document.querySelector('div');
+        // const p = document.querySelector('p');
+        // console.log(div.offsetLeft);  // 元素的左偏移量
+        // console.log(div.offsetTop);  // 元素的上偏移量
+        // // offsetLeft和offsetTop : 元素相对于有定位的父元素的左偏移量和上偏移量
+        // console.log(p.offsetLeft);  // 元素的左偏移量  
+        // console.log(p.offsetTop);  // 元素的上偏移量
+        
+
+    </script>
+</body>
+</html>
+

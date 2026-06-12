@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{ background-color: pink;}
+    </style>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+
+    <script>
+        let btn = document.querySelectorAll('button')
+        for(let i = 0; i < btn.length; i++){
+            btn[i].addEventListener('click',function(){
+                document.querySelector('button').className =''
+                this.className = 'pink'
+            })
+        }
+    </script>
+
+    <script>
+        alert('我终于成了~~~~~')       // 弹出框
+        // confirm('你喜欢我吗？')        // 确认框
+        // prompt('你喜欢我吗？')         // 输入框
+    </script>
+    <script src="my_js.js">//引入外部js文件</script>      
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // alert('你好， 我是js')   // 弹出框
+        // document.write('你好， 我是js')  // 输出到网页上（body）
+        // document.writeln('<h1>我是标题</h1>') // 输出到网页上（body）, 并且换行
+        // console.log('你好， 我是js')    // 输出到控制台（console）
+
+        // let my_name = prompt('请输入你的名字')  // 变量接收输入框的输入数据
+        // document.write(my_name)  // 输出到网页上（body）
+        
+        let my_name = prompt('请输入你的名字')  // 变量接收输入框的输入数据
+        let my_age = prompt('请输入你的年龄')   // 变量接收输入框的输入数据
+        let my_gender = prompt('请输入你的性别')   // 变量接收输入框的输入数据
+        document.write(`我的名字是：${my_name},  我的年龄是：${my_age},  我的性别是：${my_gender}`)  // 输出到网页上（body）
+        
+    </script>
+</body>
+</html>
+
+
+
+
+

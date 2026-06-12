@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* .box{
+            position: relative;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        h1{
+            position: absolute;
+            top: 50px;
+            left: 35%;
+            font-size: 70px;
+            font-weight: bold;
+        }
+        .close{
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: skyblue;
+            cursor: pointer;
+        } */
+
+        /* .box{
+            position: relative;
+            width: 800px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: seagreen;
+        }
+        .title{
+            position: absolute;
+            top: 10px;
+            left:45%;
+            font-weight: 800;
+        }
+        .text{
+            position: absolute;
+            top: 90px;
+            left: 30%;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        button{
+            cursor: pointer;
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .set{
+            bottom:50px;
+            left: 25%;
+        }
+        .clear{
+            bottom:50px;
+            right: 25%;
+        } */
+
+        /* div{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px auto;
+        } */
+
+        /* .box{
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(122,141,21);
+            margin: 100px auto;
+            width: 500px;
+            height: 400px;
+        } */
+        /* .top{
+            width: 100%;
+            height: 310px;
+        } */
+        /* .bottom{
+            position: relative;
+            width: 100%;
+            height: 90px;
+        } */
+        /* .list{
+            position:absolute;
+            bottom: 0px;
+            display: flex;
+            justify-content: space-around;
+            width: 200px;
+            margin-left: -25px;
+        } */
+        /* ul li{
+            list-style: none;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+        } */
+        /* .button{
+            position: absolute;
+            top: 20px;
+            right: 15px;
+        } */
+        /* button{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 10%;
+            background-color: rgba(0, 0, 0, 0.4);
+        } */
+        /* .text{
+            position: absolute;
+            left: 20px;
+            font-weight: 600;
+            font-size: 20px;
+        } */
+        /* .active{
+            margin-top: -2px;
+            width: 13px;
+            height: 13px;
+            background-color: white;
+        } */
+
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mi{
+            margin: 100px auto;
+            width: 100px;
+            height: 400px;
+        }
+        input{
+            outline: none;  /* 移除默认聚焦边框 */
+            height: 35px;
+            padding: 5px;
+        }
+        ul{
+            list-style: none;
+        } 
+        .result-list{
+            display: none;    /* 隐藏 */
+            border: 1px solid rgb(255, 186, 82) ;
+            width: 164px;
+            background-color: rgba(234, 224, 224, 0.1);
+        }
+        .result-list a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        .result-list a:hover{
+            background-color: #eee;
+        }
+        .search{
+            border-color: rgb(255, 186, 82);  /* 聚焦时边框颜色变为橙色 */
+            box-shadow: none;  /* 移除可能存在的阴影效果 */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <button>点击</button> -->
+    <!-- <div class='box'>
+        <p class="close">X</p>
+        <h1>我是广告</h1>
+    </div> -->
+
+    <!-- <div class="box">
+        <h2 class="title">随机点名</h2>
+        <p class="text">名字是： 张飞</p>
+        <button class="set">开始</button>
+        <button class="clear">结束</button>
+    </div> -->
+
+    <!-- <div></div> -->
+
+    <!-- <div class="box">
+        <div class="top">
+            <img src="https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800" 
+            alt="" width="500px" height="310px">
+        </div>
+        <div class="bottom">
+            <p class="text">鼬神（放海）</p>
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="button">
+                <button class="left"> < </button>
+                <button class="right"> > </button>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米10s</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">小米空调</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // // 点击按钮时，触发事件，弹出一个警告框
+        // const btn = document.querySelector('button')
+        // btn.addEventListener('click',function(){
+        //     alert('我被点击了')
+        // })
+
+        // // 关闭广告
+        // const p = document.querySelector('.close')
+        // const box = document.querySelector('.box')
+        // p.addEventListener('click',function(){
+        //     box.style.display = 'none'  // 隐藏
+        // })
+
+        // // 随机点名
+        // const text_name = ['张飞','关羽','赵云','马超','黄忠']
+        // const btn_set = document.querySelector('.set')
+        // const btn_clear = document.querySelector('.clear')
+        // const text = document.querySelector('.text')
+        // let index = 0
+        // let num = 0
+        // btn_set.addEventListener('click',function(){
+        //     num = setInterval(function(){
+        //             index = Math.floor(Math.random()*text_name.length)
+        //             text.innerHTML = `名字是： ${text_name[index]}`
+        //     },50)
+        //     if(text_name.length === 1){
+        //             text.innerHTML = `名字是： ${text_name[0]}`
+        //             btn_set.disabled = true  // 禁用
+        //             btn_clear.disabled = true  // 禁用
+        //             clearInterval(num)  // 清除定时器
+        //     }
+        // })
+        // btn_clear.addEventListener('click',function(){
+        //     clearInterval(num)
+        //     text_name.splice(index,1)  // 把数组中的元素删除
+        //     console.log(text_name);
+        // })
+
+        // const div = document.querySelector('div')
+        // div.addEventListener('mouseenter',function(){   // 鼠标移入
+        //     div.style.backgroundColor = 'pink'
+        // })
+        // div.addEventListener('mouseleave',function(){   // 鼠标移出
+        //     div.style.backgroundColor = 'skyblue'
+        // })
+
+        //        --------------------------------------
+
+        // let ikun = [
+        //     {src:"https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",p:'鼬神（放海）',color:'rgb(122,141,21)'},
+        //     {src:"https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",p:'阿玛塔莱斯',color:'rgb(54,211,61)'},
+        //     {src:"https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",p:'一袋米要抗几楼',color:'rgb(62,111,211)'},
+        //     {src:"https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",p:'卧底的神，忍辱负重',color:'rgb(222,11,21)'},
+        //     {src:"https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",p:'只打巅峰赛，一生打一把',color:'rgb(21,11,211)'},
+        //     {src:"https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",p:'帅才是人生的真谛',color:'rgb(222,141,21)'},
+        //     {src:"https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",p:'自己创的禁术，别人最会用',color:'rgb(22,141,221)'},
+        //     {src:"https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",p:'大招无敌，但自己没用过',color:'rgb(122,11,121)'},
+        //     {src:"https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800",p:'艺术就是派大星',color:'rgb(82,71,91)'},
+        // ]
+        
+
+        // // 切换为ikun中index对应的元素
+        // function change(index=0,ikun=[]){
+        //     // 设置整体背景颜色
+        //     const box = document.querySelector('.box')
+        //     box.style.backgroundColor = ikun[index].color    // 小驼峰命名法
+            
+        //     // 设置图片
+        //     const top_image = document.querySelector('.top img')
+        //     top_image.src = ikun[index].src
+
+        //     // 设置文字
+        //     const bottom_text= document.querySelector('.bottom .text')
+        //     bottom_text.innerHTML = ikun[index].p
+
+        //     // 清除其他小圆点的类型
+        //     document.querySelector('.list li.active').classList.remove('active')
+
+        //     // 设置底部的小圆点
+        //     const li = document.querySelector(`.list li:nth-child(${index+1})`)
+        //     li.classList.add('active')
+        // }
+
+        // // 记录当前选中的索引（重要）
+        // let ikun_index  = 0 
+
+        // // 点击左右按钮
+        // const left = document.querySelector('.button .left')
+        // const right = document.querySelector('.button .right')
+        // left.addEventListener('click',function(){
+        //     if(ikun_index === 0){
+        //         ikun_index = ikun.length
+        //     }
+        //     ikun_index--
+        //     change(ikun_index,ikun)
+        // })
+        // right.addEventListener('click',function(){
+        //     if(ikun_index === ikun.length-1){
+        //         ikun_index = -1
+        //     }
+        //     ikun_index++
+        //     change(ikun_index,ikun)
+        // })
+
+        // // 定时器
+        // let interval_id = setInterval(function(){
+        //     right.click()  // 自动点击右箭头，实现自动轮播
+        // },800)
+
+        // // 暂停
+        // const box = document.querySelector('.box')
+        // box.addEventListener('mouseenter',function(){
+        //     clearInterval(interval_id)
+        // })
+        // box.addEventListener('mouseleave',function(){
+        //     clearInterval(interval_id)  // 清除定时器
+        //     interval_id = setInterval(function(){
+        //         right.click()  // 自动点击右箭头，实现自动轮播
+        //     },800)
+        // })
+
+        // // 鼠标移入小圆点
+        // const all_li = document.querySelectorAll('.list li')    // 伪数组
+        // for(let i = 0;i < all_li.length; i++){
+        //     all_li[i].addEventListener('mouseenter',function(){
+        //         ikun_index = i
+        //         change(ikun_index,ikun)
+        //     })
+        // }
+        
+        const input_mi = document.querySelector('.mi input')
+        const result_list = document.querySelector('.mi .result-list') 
+        // 监听聚焦事件
+        input_mi.addEventListener('focus',function(){
+            // 显示 -- display:block;
+            result_list.style.display = 'block'
+            // 设置样式
+            input_mi.classList.add('search')
+        })
+        // 监听失焦事件
+        input_mi.addEventListener('blur',function(){
+            // 隐藏 -- display:none;
+            result_list.style.display = 'none'
+            // 取消样式
+            input_mi.classList.remove('search')
+        })
+
+        // focus 和 blur 通常只用在input的文本输入框中 （不是什么都可以聚焦）
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+

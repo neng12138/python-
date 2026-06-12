@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    /* .slider{
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        width: 500px;
+        height: 400px;
+     }
+     .slider-top{
+        width: 100%;
+        height: 310px;
+        background-repeat: no-repeat;
+        background-size: 100% 310px;
+     }
+     .slider-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 90px;
+     }
+    .slider-text{
+        font-size: 30px;
+        font-weight: 600;
+        margin: 5px;
+        padding: 3px;
+     }
+     .bot{
+        width: 200px;
+        margin  : 8px;
+        padding : 2px;
+        display: flex;
+        justify-content: space-around;
+     }
+     ul li{
+        list-style: none;     
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;     
+     }
+     .active{
+        margin-top: -2px;
+        width: 13px;
+        height: 13px;
+        background-color: white;
+     } */
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(122,141,21);
+            margin: 100px auto;
+            width: 500px;
+            height: 400px;
+        }
+        .top{
+            width: 100%;
+            height: 310px;
+        }
+        .bottom{
+            position: relative;
+            width: 100%;
+            height: 90px;
+        }
+        .list{
+            position:absolute;
+            bottom: 0px;
+            display: flex;
+            justify-content: space-around;
+            width: 200px;
+            margin-left: -25px;
+        }
+        ul li{
+            list-style: none;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        .button{
+            position: absolute;
+            top: 20px;
+            right: 15px;
+        }
+        button{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 10%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .text{
+            position: absolute;
+            left: 20px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        .active{
+            margin-top: -2px;
+            width: 13px;
+            height: 13px;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <input type="text" value="电脑"> -->
+
+    <!-- <input type="checkbox" name="" id="">       -->
+
+    <!-- <input type="button" value="按钮"> -->
+
+    <!-- <div data-id="1" data-spm="what">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div> -->
+
+    <!-- <textarea name="" id="" cols="30" rows="10">
+        用户注册协议
+        1. 注册用户必须年满18周岁，且具有合法的身份证号码。
+        2. 用户在注册过程中，必须提供真实有效的联系方式，如手机号码或邮箱地址。
+        3. 用户在注册过程中，必须提供真实有效的姓名和地址信息。
+        4. 用户在注册过程中，必须提供真实有效的邮箱地址。
+    </textarea>
+    <br>
+    <button class="btn" disabled>已经阅读用户协议(10)</button> -->
+
+    <!-- <div class="slider">
+        <div class="slider-top">
+        </div>
+        <div class="slider-bottom">
+            <h2 class="slider-text"></h2>
+            <ul class="bot">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div> -->
+
+    <div class="box">
+        <div class="top">
+            <img src="https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800" 
+            alt="" width="500px" height="310px">
+        </div>
+        <div class="bottom">
+            <p class="text">鼬神（放海）</p>
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="button">
+                <button class="left"> < </button>
+                <button class="right"> > </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // const input = document.querySelector('input');
+        // console.log(input.value);   // 电脑
+        // input.value = '手机';
+        // input.type = 'password';  // 密码框
+        
+        // const checkbox = document.querySelector('input');
+        // console.log(checkbox.checked);   // false
+        // checkbox.checked = true;   // 选中
+        
+        // const btn = document.querySelector('input');
+        // console.log(btn.disabled);   // false
+        // btn.disabled = true;   // 禁用
+        
+        // const one = document.querySelector('div[data-id="1"]');
+        // // const one = document.querySelector('div');
+        // console.log(one.dataset);   // DOMStringMap {id: '1', spm: 'what'}
+        // console.log(one.dataset.id);   // 1
+        // console.log(one.dataset.spm);   // what
+        
+        // let num = setInterval(function(){
+        //     console.log('我在这呢');
+        // },2000)
+        // console.log(num);
+        // clearInterval(num);   // 清除定时器
+
+        // let i = 1;
+        // let num = setInterval(function(){
+        //     document.write(i);
+        //     i++;
+        // },1000)
+        // clearInterval(num);   // 清除定时器
+        
+        // const btn = document.querySelector('.btn');
+        // let num = 10
+        // let interval_id = setInterval(function(){
+        //         num--
+        //         btn.innerHTML = `已阅读用户协议(${num})`
+        //         if(num === 0){
+        //             clearInterval(interval_id)
+        //             btn.disabled = false        // 取消禁用
+        //             btn.innerHTML = '同意用户协议'
+        //         }
+        // },1000)
+
+        
+    // // 轮播图（每一秒切换一张图片）
+    // let ikun = [
+    //     {src:"https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",p:'鼬神（放海）',color:'rgb(122,141,21)'},
+    //     {src:"https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",p:'阿玛塔莱斯',color:'rgb(54,211,61)'},
+    //     {src:"https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",p:'一袋米要抗几楼',color:'rgb(62,111,211)'},
+    //     {src:"https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",p:'卧底的神，忍辱负重',color:'rgb(222,11,21)'},
+    //     {src:"https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",p:'只打巅峰赛，一生打一把',color:'rgb(21,11,211)'},
+    //     {src:"https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",p:'帅才是人生的真谛',color:'rgb(222,141,21)'},
+    //     {src:"https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",p:'自己创的禁术，别人最会用',color:'rgb(22,141,221)'},
+    //     {src:"https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",p:'大招无敌，但自己没用过',color:'rgb(122,11,121)'},
+    //     {src:"https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800",p:'艺术就是派大星',color:'rgb(82,71,91)'},
+    // ]
+
+    // // 切换为ikun中index对应的元素
+    // function change(index=0,ikun=[]){
+    //     // 设置整体背景颜色
+    //     const slider = document.querySelector('.slider')
+    //     slider.style.backgroundColor = ikun[index].color    // 小驼峰命名法
+        
+    //     // 设置图片
+    //     const slider_top = document.querySelector('.slider-top')
+    //     slider_top.style.backgroundImage = `url(${ikun[index].src})`
+
+    //     // 设置文字
+    //     const slider_bottom_text = document.querySelector('.slider-text')
+    //     slider_bottom_text.innerHTML = ikun[index].p
+
+    //     // 清除其他小圆点的类型（每次选中前一个小圆点）
+    //     const last_li_index = index === 0 ? ikun.length : index
+    //     const slider_li = document.querySelector(`.bot li:nth-child(${last_li_index})`)
+    //     slider_li.classList.remove('active')
+    //     // const slider_li = document.querySelector('.bot li.active')
+    //     // slider_li.classList.remove('active')
+
+    //     // 设置底部的小圆点
+    //     const slider_bottom_li = document.querySelector(`.bot li:nth-child(${index+1})`)
+    //     slider_bottom_li.classList.add('active')
+    // }
+
+    // // 定时器
+    // let ikun_index  = 0
+    // let interval_id = setInterval(function(){
+    //     if(ikun_index === ikun.length){
+    //         ikun_index = 0
+    //     }
+    //     change(ikun_index,ikun)
+    //     ikun_index++
+    // },800)
+
+
+    let ikun = [
+            {src:"https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",p:'鼬神（放海）',color:'rgb(122,141,21)'},
+            {src:"https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",p:'阿玛塔莱斯',color:'rgb(54,211,61)'},
+            {src:"https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",p:'一袋米要抗几楼',color:'rgb(62,111,211)'},
+            {src:"https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",p:'卧底的神，忍辱负重',color:'rgb(222,11,21)'},
+            {src:"https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",p:'只打巅峰赛，一生打一把',color:'rgb(21,11,211)'},
+            {src:"https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",p:'帅才是人生的真谛',color:'rgb(222,141,21)'},
+            {src:"https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",p:'自己创的禁术，别人最会用',color:'rgb(22,141,221)'},
+            {src:"https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",p:'大招无敌，但自己没用过',color:'rgb(122,11,121)'},
+            {src:"https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800",p:'艺术就是派大星',color:'rgb(82,71,91)'},
+        ]
+        
+
+        // 切换为ikun中index对应的元素
+        function change(index=0,ikun=[]){
+            // 设置整体背景颜色
+            const box = document.querySelector('.box')
+            box.style.backgroundColor = ikun[index].color    // 小驼峰命名法
+            
+            // 设置图片
+            const top_image = document.querySelector('.top img')
+            top_image.src = ikun[index].src
+
+            // 设置文字
+            const bottom_text= document.querySelector('.bottom .text')
+            bottom_text.innerHTML = ikun[index].p
+
+            // 清除其他小圆点的类型
+            document.querySelector('.list li.active').classList.remove('active')
+
+            // 设置底部的小圆点
+            const li = document.querySelector(`.list li:nth-child(${index+1})`)
+            li.classList.add('active')
+        }
+
+        // 记录当前选中的索引
+        let ikun_index  = 0 
+
+        // 点击左右按钮
+        const left = document.querySelector('.button .left')
+        const right = document.querySelector('.button .right')
+        left.addEventListener('click',function(){
+            if(ikun_index === 0){
+                ikun_index = ikun.length
+            }
+            ikun_index--
+            change(ikun_index,ikun)
+        })
+        right.addEventListener('click',function(){
+            if(ikun_index === ikun.length-1){
+                ikun_index = -1
+            }
+            ikun_index++
+            change(ikun_index,ikun)
+        })
+
+        // 定时器
+        let interval_id = setInterval(function(){
+            right.click()  // 自动点击右箭头，实现自动轮播
+        },800)
+
+        // 暂停
+        const box = document.querySelector('.box')
+        box.addEventListener('mouseenter',function(){
+            clearInterval(interval_id)
+        })
+        box.addEventListener('mouseleave',function(){
+            clearInterval(interval_id)  // 清除定时器
+            interval_id = setInterval(function(){
+                right.click()  // 自动点击右箭头，实现自动轮播
+            },800)
+        })
+
+        // 鼠标移入小圆点
+        const all_li = document.querySelectorAll('.list li')
+        for(let i = 0;i < all_li.length; i++){
+            all_li[i].addEventListener('mouseenter',function(){
+                ikun_index = i
+                change(ikun_index,ikun)
+            })
+        }
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* .box{
+            position: relative;
+            left: 750px;
+            top: 200px;
+            display: flex;
+            flex-direction: column;
+            max-width: 370px;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        textarea{
+            width: 300px;
+            height: 50px;
+            resize: none;
+            overflow: hidden;
+            background-color: rgba(210, 210, 210, 0.2);
+            border-color: rgba(0, 0, 0, 0.3);
+            border-radius: 2%;
+        }
+        button{
+            cursor: pointer;
+            width: 70px;
+            height: 55px;
+            background-color: #29bbec;
+            color: aliceblue;
+            border: 1px solid #29bbec;
+            border-radius: 10%;
+        }
+        textarea:focus{
+            outline: none;
+            height: 70px;
+            transition: all 0.3s;
+            background-color: white;
+            border-color: rgba(0, 0, 0,0.5);
+        }
+        textarea:focus + button {
+            height: 70px;
+            transition: all 0.3s;
+        }
+        button:hover{
+            background-color: rgba(0, 164, 214,0.5);
+            border: 1px solid rgba(0, 164, 214,0.5);
+        }
+        .text{
+            position: absolute;
+            top: 40px;
+            right: 80px;
+            color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+        }
+        textarea:focus ~ .text{
+            opacity: 1;
+            top: 55px;
+            transition: all 0.3s;
+        }
+        .bottom{
+            position: relative;
+            margin-top: 5px;
+            width: 370px;
+            height: 80px;
+        }
+        .username{
+            position: absolute;
+            top: -13px;
+            left: 8px;
+            font-size: 15px;
+            font-weight: 800;
+            color: rgb(238, 94, 118);
+        }
+        .content{
+            position: absolute;
+            top: 13px;
+            left: 5px;
+        }
+        .time{
+            position: absolute;
+            bottom: -10px;
+            left: 5px;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .bottom hr{
+            position: absolute;
+            bottom: -10px;
+            width: 370px;
+        } */
+
+    
+        /* .box{
+            margin: 100px auto;
+            width: 800px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0,0.6);
+        }
+        .top{
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        .title{
+            position: relative;
+            width: 40%;
+        }
+        .title h1{
+            position: absolute;
+            top: 5px;
+            left: 30px;
+            cursor: pointer;
+        }
+        .title-name{
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .title-name h3{
+            cursor:pointer;
+            font-weight: 500;
+        }
+        .title-name-hover{
+            color: rgba(255, 0, 0,0.7);
+            text-decoration-line: underline;
+            text-decoration-color: rgba(255, 0, 0,0.7);
+        }
+        .bottom{
+            width: 100%;
+            height: 400px;
+        }
+        .list-item{
+            display: none;
+        }
+        .list-item img{
+            width: 100%;
+            height: 400px;
+        }
+        .active{
+            display: block;
+        } */
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <input type="text"> -->
+
+    <!-- <div class="box">
+        <div class="top">
+            <textarea id="area" placeholder="发一条评论"></textarea>
+            <button>发布</button>
+            <p class="text">0/200字</p>
+        </div>
+        <div class="comment">
+            <div class="bottom">
+                <p class="username">清风徐来</p>
+                <p class="content">你好</p>
+                <p class="time">2025-05-11 10:48:24</p>
+                <hr>
+            </div>
+        </div>
+    </div> -->
+    
+    <!-- <div class="box">
+        <div class="top">
+            <div class="title">
+                <h1 >每日特价</h1>
+            </div>
+            <div class="title-name">
+                <h3 class="name title-name-hover">精选</h3>
+                <h3 class="name">美食</h3>
+                <h3 class="name">旅游</h3>
+                <h3 class="name">护肤</h3>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="list-item active">
+                <img src="https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg">
+            </div>
+            <div class="list-item">
+                <img src="https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280">
+            </div>
+            <div class="list-item">
+                <img src="https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280">
+            </div>
+            <div class="list-item">
+                <img src="https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800">
+            </div>
+        </div>
+    </div> -->
+
+    <ul>
+        <li class="all"><p>全选</p><input type="checkbox"></li>
+        <li><p>台湾</p><input type="checkbox"></li>
+        <li><p>广州</p><input type="checkbox"></li>
+        <li><p>珠海</p><input type="checkbox"></li>
+    </ul>
+
+    <script>
+        // const input = document.querySelector('input')
+        // // 1. 键盘事件 keydown keyup
+        // input.addEventListener('keydown', function(){
+        //     console.log(input.keyCode)
+        // })
+        // input.addEventListener('keyup', function(){
+        //     console.log(input.keyCode)
+        // })
+        // // 2. 文本事件 input
+        // input.addEventListener('input', function(){
+        //     console.log(input.value)
+        // })
+
+        // // 需求： 设置评论区
+        // // 1. 设置评论框的字数
+        // const area = document.querySelector('#area')
+        // const text = document.querySelector('.text')
+        // area.addEventListener('input', function(){
+        //     text.innerHTML = `${area.value.length}/200字`
+        // })
+
+        // // 2. 点击发布按钮，将评论框的内容添加到评论区
+        // const btn = document.querySelector('.top button')
+        // const comment = document.querySelector('.comment')
+        // btn.addEventListener('click', function(){
+        //     // 空评论时不发布
+        //     if(area.value.trim() === '') return;
+
+        //     const areaValue = area.value.trim()     // 去除左右空格
+        //     const now = new Date()
+        //     // 简单写法：直接拼接日期时间
+        //     const time = now.toISOString().slice(0, 19).replace('T', ' ').replace(/-/g, '-')
+            
+        //     comment.innerHTML += `
+        //                         <div class="bottom">
+        //                             <p class="username">清风徐来</p>
+        //                             <p class="content">${areaValue}</p>
+        //                             <p class="time">${time}</p>
+        //                             <hr>
+        //                         </div> `
+        //     area.value = ''
+        //     text.innerHTML = `0/200字`  
+        // })
+
+        // // 3. 点击Enter，将评论框的内容添加到评论区
+        // area.addEventListener('keyup', function(e){
+        //     if(e.key === 'Enter'){
+        //         btn.click()
+        //     }
+        // })
+
+        // // Tab转换
+        // const title_name = document.querySelectorAll('.title-name .name')
+        // for(let i = 0; i < title_name.length; i++){
+        //     title_name[i].addEventListener('mouseenter', function(){
+        //             document.querySelector('.title-name h3.title-name-hover').classList.remove('title-name-hover')
+        //             this.classList.add('title-name-hover')
+
+        //             document.querySelector('.bottom div.active').classList.remove('active') 
+        //             document.querySelector(`.bottom .list-item:nth-child(${i+1})`).classList.add('active')
+        //     })
+        // }
+
+        // 需求： 全选框
+        const all = document.querySelector('.all input')
+        const checkboxs = document.querySelectorAll('ul li:not(:first-child) input')
+        // 1. 设置全选框
+        all.addEventListener('click',function(){
+            // checkboxs.checked = all.checked    // 全选框的状态和其他框的状态一致
+            for(let i=0 ; i<checkboxs.length ; i++){
+                checkboxs[i].checked = all.checked
+            }
+        })
+        // // 2. 设置函数判断复选框是否全选
+        // function checkAll(){
+        //     let flag = true
+        //     for(let i=0 ; i<checkboxs.length ; i++){
+        //         if(checkboxs[i].checked === false){
+        //             flag = false
+        //             break
+        //         }
+        //     }
+        //     return flag
+        // }
+        // 3. 设置复选框
+        for(let i=0 ; i<checkboxs.length ; i++){
+                checkboxs[i].addEventListener('click',function(){
+                    // if(checkAll()){
+                    //     all.checked = true
+                    // }
+                    // else{
+                    //     all.checked = false
+                    // }
+                    all.checked = document.querySelectorAll('ul li:not(:first-child) input:checked').length === checkboxs.length
+                })
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+

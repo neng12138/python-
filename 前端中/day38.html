@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <!-- <div></div> -->
+
+    <script>
+        // const gift = '茶叶,清洗球'
+        // const arr = gift.split(',')
+        // let str = ''    // 用于存储拼接的字符串
+        // arr.forEach(function(item){
+        //     // // 每次取出字符串的内容封装到span节点中
+        //     // const span = document.createElement('span')
+        //     // span.innerText = `【赠品】${item}`
+        //     // console.log(span)
+
+        //     // 拼接字符串，不需要创建节点，直接拼接字符串即可，最后输出拼接好的字符串
+        //     const span = `<span>【赠品】${item}</span>`  
+        //     str += span
+        // })
+        // console.log(str);
+        // const str = gift.split(',').map(item => `<span>【赠品】${item}</span><br>`).join('')
+        // document.querySelector('div').innerHTML = str
+
+        // 原型
+        // let that
+        function Star(uname,age){
+            // that = this
+            this.uname = uname
+            this.age = age
+        }
+        // 构造函数的prototype对象属性（原型对象）
+        Star.prototype.sing = function(){
+            // that = this 
+            console.log('我会唱歌');
+        }
+        const ldh = new Star('刘德华',28)
+        const zxy = new Star('张学友',39)
+        // console.log(ldh)   // Star { uname: '刘德华', age: 18 }
+        // console.log(zxy)   // Star { uname: '张学友', age: 19 }
+        // 所有的实例对象都可以直接访问到原型对象上的属性和方法
+        ldh.sing()  // 我会唱歌
+        // console.log(that === ldh)    // true
+        zxy.sing()  // 我会唱歌
+        // 所有的实例对象访问的sing方法都是同一个方法
+        console.log(ldh.sing === zxy.sing)    // true
+        
+
+    </script>
+</body>
+</html>
+
+

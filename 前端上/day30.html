@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /*html{
+            scroll-behavior: smooth;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 0 auto;
+            width: 1300px;
+            height: 3000px;
+            display: flex;
+        }
+        .main{
+            position: relative;
+            width: 1200px;
+            height: 100%;
+            background-color: skyblue;
+        }
+        .left-nav{
+           opacity: 0;
+           transition: all 0.5s;
+           position: fixed;
+           right: 240px;
+           top: 22%;
+           width: 100px;
+           height: 400px;
+        }
+        .left-nav div{
+            text-align: center;
+            line-height: 100px;
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+        }
+         .left-nav div:nth-child(1){
+            background-color: rgb(172, 174, 175);
+        }
+        .left-nav div:nth-child(2){
+            background-color: pink;
+        }
+        .left-nav div:nth-child(3){
+            background-color: slateblue;
+        }
+        .left-nav div:nth-child(4){
+            background-color: green;
+        }
+        .left-nav div:hover{
+            color: rgba(255, 132, 0, 0.9);
+        }
+        .main div{
+            position: absolute;
+            left: 16%;
+            width: 800px;
+            height: 400px;
+        }
+        .location{
+            top: 15%;
+            background-color: salmon;
+        }
+        .location-item2{
+            top: 40%;
+            background-color: rgb(90, 186, 92);
+        }
+        .location-item3{
+            top: 65%;
+            background-color: saddlebrown;
+        }
+        .title-nav{
+            position: fixed;
+            top: -82px;
+            width: 100%;
+            height: 80px;
+            background-color: rgb(224, 47, 156);
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            border-bottom: 2px solid darkblue;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+        .active{
+            color: rgba(255, 132, 0, 0.9);
+        }*/
+
+        /* *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+        }
+        ul{
+            text-align: center;
+            list-style: none;
+            display: flex;
+        }
+        ul li{
+            width: 100px;
+            height: 100px;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        ul li:hover{
+            color: rgb(255, 0, 0, 0.6);
+        }
+        .slider{
+            position: absolute;
+            top: 55%;
+            transform: translateX(25px);
+            width: 50px;
+            height: 4px;
+            background-color: rgba(255, 0, 0,0.7);
+            transition: all 0.3s;
+        } */
+
+        /* div{
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid black;
+        }*/
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       .box{
+            position: relative;
+            margin: 100px auto;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(171, 23, 23);
+        }
+        .start-time{
+            position: absolute;
+            top: 9%;
+            left: 19%;
+            color: white;
+            font-size: 19px;
+        }
+        .text{
+            position: absolute;
+            top: 24%;
+            left: 8%;
+            color: white;
+            font-size: 50px;
+        }
+        .end-time{
+            position: absolute;
+            bottom: 7%;
+            left: 27%;
+            color: white;
+            font-size: 25px;
+        }
+        .time{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            top: 45%;
+            left: 17%;
+            width: 200px;
+            height: 55px;
+        }
+        .time div{
+            width: 45px;
+            height: 45px;
+            background-color: black;
+            line-height: 45px;
+            color: white;
+            font-size: 30px;
+        }
+        .time .sign{
+            font-size: 40px;
+            color: white;
+            margin-top: -12px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- <div class="title-nav">我是顶部导航栏</div>
+    <div class="box">
+        <div class="main">
+            <div class="location"></div>
+            <div class="location-item2"></div>
+            <div class="location-item3"></div>
+        </div>
+        <div class="left-nav">
+            <div class="title-1" data-id="0">顶部</div>
+            <div class="title-2" data-id="1">title-1</div>
+            <div class="title-3" data-id="2">title-2</div>
+            <div class="title-4" data-id="3">title-3</div>
+        </div>
+    </div> -->
+    
+    <!-- <div class="box">
+        <ul>
+            <li>精选</li>
+            <li>美食</li>
+            <li>旅游</li>
+            <li>娱乐</li>
+        </ul>
+        <div class="slider"></div>
+    </div> -->
+
+    <!-- <div></div> -->
+
+    <div class="box">
+        <div class="start-time"></div>
+        <p class="text">下班倒计时</p>
+        <div class="time">
+            <div class="hour">00</div> 
+            <p class="sign">:</p>
+            <div class="minute">00</div> 
+            <p class="sign">:</p>
+            <div class="second">00</div>
+        </div>
+        <div class="end-time">18:30:00下课</div>
+    </div>
+
+    <script>
+        // // 立即执行函数可以防止数据污染
+        // (function(){
+        //     const html = document.documentElement    // html标签的对象
+        //     const left_nav = document.querySelector('.box .left-nav');
+        //     const title_nav = document.querySelector('.title-nav');
+        //     const main = document.querySelectorAll('.main div');
+        //     // 监听网页的滚动（伴随侧边栏和顶部的显示与隐藏）
+        //     window.addEventListener('scroll',function(){
+        //         const n = html.scrollTop;  // 被卷去的顶部距离
+        //         left_nav.style.opacity = n+120 >= main[0].offsetTop? 1 : 0;
+        //         // 顶部导航栏是直接藏在页面上面的
+        //         title_nav.style.top = n+120 >= main[0].offsetTop? '0px' : '-82px';
+        //     })
+
+        //     // 设置侧边栏的滚动跳转
+        //     // 事件委托（将事件绑定在父元素上，通过事件对象的target属性来判断事件源）
+        //     left_nav.addEventListener('click',function(e){
+        //         const id = +e.target.dataset.id;  // 获取元素的自定义属性;
+        //         // if(id === 0){
+        //         //     html.scrollTop = 0;
+        //         // }
+        //         // else{
+        //         //     html.scrollTop = main[id-1].offsetTop - 120;
+        //         // }
+
+        //         // 三元表达式
+        //         html.scrollTop = id === 0? 0 : main[id-1].offsetTop - 120;  
+        //     })
+        // })();
+
+        // // 立即执行函数可以防止数据污染
+        // (function(){
+        //     // 点击侧边栏后，为字体加颜色标明
+        //     const left_nav = document.querySelector('.box .left-nav');
+        //     // 事件委托（将事件绑定在父元素上，通过事件对象的target属性来判断事件源）
+        //     left_nav.addEventListener('click',function(e){
+        //             const old = document.querySelector('.left-nav .active');
+        //             // document.querySelector未找到时返回null，null是false
+        //             if(old) old.classList.remove('active');  // 移除旧的
+                    
+        //             if(e.target.dataset.id !== '0'){
+        //                 // 排除第一个（顶部）
+        //                 e.target.classList.add('active');  // 添加新的
+        //             }        
+        //     })
+
+        //     // 滚动到哪个区域，侧边栏的字体就加颜色
+        //     const html = document.documentElement;
+        //     const main = document.querySelectorAll('.main div');
+        //     window.addEventListener('scroll',function(){
+        //             const n = html.scrollTop + 130;  // 被卷去的顶部距离
+
+        //             const old = document.querySelector('.left-nav .active');
+        //             if(old) old.classList.remove('active');  // 移除旧的
+        //             if(n >= main[2].offsetTop){
+        //                 document.querySelector('.left-nav div[data-id="3"]').classList.add('active');
+        //             }
+        //             else if(n >= main[1].offsetTop){
+        //                 document.querySelector('.left-nav div[data-id="2"]').classList.add('active');  
+        //             }
+        //             else if(n >= main[0].offsetTop){
+        //                 document.querySelector('.left-nav div[data-id="1"]').classList.add('active');
+        //             }
+        //     })
+        // })();
+        
+
+
+        // const ul = document.querySelector('.box ul');
+        // const slider = document.querySelector('.slider');
+        // // 小滑块的移动（事件委托）
+        // ul.addEventListener('mouseover',function(e){
+        //     const left = e.target.offsetLeft
+        //     // 小滑块的移动（通过设置transform属性）
+        //     slider.style.transform = `translateX(${left+25}px)`
+        // })
+
+        // const date = new Date()        // 获取当前时间
+        // console.log(date);
+        // const date1 = new Date('2024-05-15 12:00:00')        // 获取指定时间
+        // console.log(date1);
+
+        // const div = document.querySelector('div');
+        // // 拼接
+        // function lpad(date){
+        //     const str = date >= 10 ? date : '0' + date
+        //     return str 
+        // }
+        // function getTime(){
+        //     const date = new Date()         //获取当前时间
+        //     const year = date.getFullYear()
+        //     const month = lpad(date.getMonth() + 1)
+        //     const day = date.getDate()
+        //     const hour = lpad(date.getHours())
+        //     const minute = lpad(date.getMinutes())
+        //     const second = lpad(date.getSeconds())
+        //     return `${year}-${month}-${day} ${hour}:${minute}:${second}`
+        // }
+        // console.log(getTime());
+        // div.innerHTML = getTime();
+        // setInterval(function(){
+        //         div.innerHTML = getTime()      // 每隔1s刷新一次
+        // },1000)
+
+        (function(){
+            // 获取元素对象
+            const start_time = document.querySelector('.start-time')
+            const hour = document.querySelector('.hour')
+            const minute = document.querySelector('.minute')
+            const second = document.querySelector('.second')
+
+            // 拼接
+            function lpad(date){
+                const str = date >= 10? date : '0' + date
+                return str
+            }
+
+            // 获取当前时间
+            function getStartTime(){
+                const date = new Date()         //获取当前时间
+                const year = date.getFullYear()
+                const month = date.getMonth() + 1   // 月份从0开始计数，要加1
+                const day = date.getDate()
+                return `今天是${year}年${month}月${day}日`
+            }
+            // 将当前时间显示在页面上
+            start_time.innerHTML = getStartTime()
+
+            // 获取剩余时间的时分秒
+            function time(){
+                const start = new Date()
+                const year = start.getFullYear()
+                const month = lpad(start.getMonth() + 1)
+                const day = lpad(start.getDate())
+                const end = new Date(`${year}-${month}-${day} 23:30:00`)
+
+                const total = (+end - +start) / 1000;  // 相差的秒数
+                // const total = (end.getTime() - +start.getTime()) / 1000; 
+                const hour = lpad(Math.floor(total / 60 / 60 % 24))
+                const minute = lpad(Math.floor(total / 60 % 60))
+                const second = lpad(Math.floor(total % 60))
+                return [hour,minute,second]
+            }
+
+            // 将时分秒显示在页面上
+            function show(){
+                const arr = time()
+                hour.innerHTML = arr[0]
+                minute.innerHTML = arr[1]
+                second.innerHTML = arr[2]
+
+                // 如果时间到了，就停止
+                if(arr[0] === '00' && arr[1] === '00' && arr[2] === '00') return true
+                else return false
+            }
+
+            // 初始显示
+            show()
+
+            // 定时器
+            let timer_id = setInterval(function(){
+                const flag = show()
+                // 如果时间到了，就停止定时器
+                if(flag){
+                    clearInterval(timer_id)
+                }
+            },1000)
+        })()
+    
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script src="./lodash.min.js"></script>
+    <script>
+        // 先导入lodash.min.js
+        const obj = {
+            name : 'pink',
+            age : 18,
+            family : {
+                baby : 'blue'
+            }
+        }
+        const o = _.cloneDeep(obj)    // lodash深拷贝
+        o.family.baby = 'red'
+        console.log(o);
+        console.log(obj);
+
+        // // 方式二： JSON.parse(JSON.stringify(obj))
+        // const o = JSON.parse(JSON.stringify(obj))
+        // o.family.baby = 'red'
+        // console.log(o);
+        // console.log(obj);
+
+    </script>
+</body>
+</html>
+
+

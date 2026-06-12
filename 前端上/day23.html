@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* h2,table{
+            text-align: center;
+            margin : 0 auto;
+        }
+        table{
+            width: 900px;
+            height: 200px;
+        }
+        .first-row{
+            background-color: #c0bbbb;
+        } */
+        /* table tr:not(.first-row):hover{   
+            
+            background-color: #eeeaea; 选择除了第一行之外的所有行 
+        } */
+        /* .box{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        } */
+
+        .box{
+            margin: 0 auto;
+            width: 1235px;
+            height: 615px;
+            background-color: rgb(230, 252, 250);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: space-between;
+        }
+        div div{
+            margin-left: 3px;
+            margin-right: 3px;
+            width: 240px;
+            height: 305px;
+            /* background-color: cornflowerblue; */
+            text-align: center;
+        }
+        div div:hover{
+            background-color: rgb(241, 255, 250);
+            margin-top: -5px;
+            /* transform: translateY(-5px);  向上移动5px */
+            box-shadow: 0 9px 15px rgba(0,0,0,0.4);  /* 悬浮时阴影加深 */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <h2>学生信息</h2>
+    <br>
+    <table border="1" cellspacing="0">
+        <tr class = 'first-row'>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+    </table> -->
+    
+    <!-- <div class="box"></div> -->
+
+    <div class="box">
+    </div>
+
+    <script src="day23.js"></script>
+    <script>
+        // function buquan(my_num){    // 补0函数
+        //     // if(my_num < 10){
+        //     //     return `0${my_num}`;
+        //     // }else{
+        //     //     return my_num;}
+        //     return my_num < 10 ? `0${my_num}` : my_num;        // 三元表达式
+        // }
+        // function getTime(time){
+        //     let hour = buquan(parseInt(my_time / 60 / 60 % 24));    // 计算小时数
+        //     let minute = buquan(parseInt(my_time / 60 % 60));        // 计算分钟数
+        //     let second = buquan(parseInt(my_time % 60));            // 计算秒数
+
+        //     return `计算到的时间为：${hour}小时${minute}分钟${second}秒`;
+        // }
+        // let my_time = +prompt("请输入秒数：");
+        // time = getTime(my_time);    // 调用函数
+        // // alert(time);
+        // document.write(`<h2>${time}</h2>`)
+        
+        // let goods = {}
+        // goods.uname = prompt("请输入商品名称：");
+        // goods.num = prompt("请输入商品编号：");
+        // goods.weight = prompt("请输入商品毛重：");
+        // goods.address = prompt("请输入商品地址：");
+        
+        // document.write(`<h2>品牌：小米</h2><br \>`)
+        // document.write(`商品名称：${goods.uname}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp商品编号：${goods.num}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp商品毛重：${goods.weight}kg&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp商品地址：${goods.address}`)
+        
+        // let student = [
+        //     {name : '张三',age : 18,gender : '男',hometown : '北京'},
+        //     {name : '李四',age : 19,gender : '女',hometown : '上海'},
+        //     {name : '王五',age : 20,gender : '男',hometown : '广州'},
+        //     {name : '赵六',age : 21,gender : '女',hometown : '深圳'},
+        //     {name : '小泉',age : 23,gender : '女',hometown : '兰州'}
+        // ]
+        // let tables = document.querySelector('table') // 获取表格元素
+        // for(let i = 0;i< student.length;i++){
+        //     tables.innerHTML += `
+        //         <tr>
+        //             <th>${i + 1}</th>
+        //             <th>${student[i].name}</th>
+        //             <th>${student[i].age}</th>
+        //             <th>${student[i].gender}</th>
+        //             <th>${student[i].hometown}</th>
+        //         </tr>
+        //     `;
+        // }
+    
+        // // 猜数字
+        // let random_num = Math.floor(Math.random()*11)   // 生成0-10的数字
+        // console.log(random_num)
+        // let gess_num = 0
+        // while(true){
+        //     if(gess_num === 3){
+        //         alert(`是${random_num}啊，还得练，兄弟~`)
+        //         break
+        //     }
+        //     let gess = +prompt('请输入一个数字: ')
+        //     if(gess === random_num){
+        //         alert('猜中了，你真棒!')
+        //         break
+        //     }
+        //     else if(gess > random_num){
+        //         alert('猜的太大了，再猜猜看~')
+        //     }
+        //     else{
+        //         alert('猜的太小了，再猜猜看~')
+        //     }
+        //     gess_num++
+        // }
+    
+        // function getRandomColor(flag=true){
+        //     let random_color = ''
+        //     if(flag){
+        //         random_color += '#'
+        //         let arr = [1,2,3,4,5,6,7,8,9,'a','a','c','d','e','f']
+        //         for(let i = 0; i < 6; i++){
+        //             let random_index = Math.floor(Math.random()*arr.length)
+        //             random_color += arr[random_index]
+        //         }
+        //     }
+        //     else{
+        //         let arr = []
+        //         for(let i = 0; i< 3; i++){
+        //             let random_num = Math.floor(Math.random()*256)
+        //             arr.push(random_num)
+        //         }
+        //         random_color += `rgb(${arr[0]},${arr[1]},${arr[2]})` 
+        //     }
+
+        //     return random_color
+        // }
+        // // console.log(getRandomColor());
+        // // document.querySelector('.box').style.backgroundColor = getRandomColor();
+        // document.querySelector('.box').style.backgroundColor = getRandomColor(false);
+        // // document.querySelector('.box').style.borderRadius = '10px';
+        // // document.querySelector('.box').style.boxShadow = '5px 5px 10px rgba(0,0,0,0.3)';
+    
+        
+        // let ikun = [
+        //     {src:"https://img2.baidu.com/it/u=2263973031,1080687463&fm=253&app=138&f=JPEG?w=800&h=800",p:'ikun01'},
+        //     {src:"https://b0.bdstatic.com/768c7c8c39a2fada4f108d236309af32.jpg@h_1280",p:'ikun02'},
+        //     {src:"https://b0.bdstatic.com/f62d29a0bda31dc334274000a6bfa27f.jpg@h_1280",p:'ikun03'},
+        //     {src:"https://b0.bdstatic.com/e7d2293ded87339f7eccafc22102991a.jpg@h_1280",p:'ikun04'},
+        //     {src:"https://b0.bdstatic.com/96d84beefe1f610ace2cbf66dab5dc6d.jpg@h_1280",p:'ikun05'},
+        //     {src:"https://pica.zhimg.com/v2-97faf15d76dc006c111dc7ba7069c9b2_r.jpg",p:'ikun06'},
+        //     {src:"https://img0.baidu.com/it/u=2785718427,1436786782&fm=253&app=138&f=JPEG?w=800&h=800",p:'ikun07'},
+        //     {src:"https://pica.zhimg.com/v2-cba3323075ea04f7631d60044dc54ad8_1440w.jpg",p:'ikun08'},
+        //     {src:"https://img1.baidu.com/it/u=721327224,2888181238&fm=253&app=138&f=JPEG?w=801&h=800",p:'ikun09'},
+        // ]
+        // for(let i = 0;i < ikun.length;i++){
+        //     document.querySelector('.box').innerHTML += `
+        //         <div>
+        //             <img src=${ikun[i].src} alt="" width="100%">
+        //             <p>${ikun[i].p}</p>
+        //         </div>
+        //     `
+        // }
+
+
+    </script>
+</body>
+</html>
+
+
+

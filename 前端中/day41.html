@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button>提交</button>
+    
+    <script>
+        // const obj = {uname:'pink'}
+        // function func(x,y){
+        //     console.log(this);
+        //     console.log(x,y);
+        // }
+        // // call 
+        // // 1. 调用函数
+        // // 2. 改变this指向
+        // func.call(obj,1,2)
+
+        // const obj = {age:18}
+        // function func(x,y){
+        //     console.log(this);
+        //     console.log(x,y);
+        // }
+        // // apply
+        // // 1. 调用函数
+        // // 2. 改变this指向
+        // func.apply(obj,[1,2])       // 数组形式传递参数
+
+        // // apply使用场景
+        // // 1. 求数组最大值
+        // const arr = [100,44,77]
+        // const max = Math.max.apply(Math,arr)
+        // console.log(max);
+        // // 2. 求数组最小值
+        // const min = Math.min.apply(Math,arr)
+        // console.log(min);
+
+        // // 展开运算符
+        // const max1 = Math.max(...arr)
+        // console.log(max1);
+        // const min1 = Math.min(...arr)
+        // console.log(min1);
+
+
+        // bind
+        // 1. 不会调用函数
+        // 2. 改变this指向
+        // 3. 返回一个新的函数，但是这个函数的this指向已经改变
+        const obj = {uname:'pink'}
+        function func(x,y){
+            console.log(this);
+            console.log(x,y);
+        }
+        const fn = func.bind(obj)    // 不会调用函数，返回一个新的函数
+        fn(1,2)
+
+        // 需求：按钮的禁用
+        document.querySelector('button').addEventListener('click',function(){
+            // 这里的this指向的是button （普通函数）
+            this.disabled = true      // 禁用按钮
+            // 方式一： 
+            // window.setTimeout(function(){
+            //     // 这里的this指向的是window （普通函数）
+            //     // 但使用了bind改变this指向，this指向的是button
+            //     this.disabled = false     // 启用按钮
+            // }.bind(this),2000)
+            // 方式二：
+            setTimeout(() => {
+                // 这里的this指向的是button （箭头函数）
+                this.disabled = false     // 启用按钮
+            },2000)
+        })
+
+    </script>
+</body>
+</html>
+
+

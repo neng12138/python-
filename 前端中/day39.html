@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        // // 原型继承
+        // const person = {
+        //     eays: 2,
+        //     head: 1
+        // }
+        // function Woman(){}
+        // Woman.prototype = person  // 原型继承
+        // Woman.prototype.constructor = Woman  // 恢复指向构造函数
+        // const red = new Woman()  // 实例对象
+        // console.log(red)
+        // console.log(red.eays);
+        // console.log(Woman.prototype.constructor);
+        
+        // function Man(){}
+        // Man.prototype = person  // 原型继承
+        // Man.prototype.constructor = Man  // 恢复指向构造函数
+        // const blue = new Man()  // 实例对象
+        // console.log(blue)
+        // console.log(blue.eays);
+        // console.log(Man.prototype.constructor);
+
+        // 原型继承
+        function Person() {     // 父构造函数
+            this.eays = 2
+            this.head = 1
+        }
+        function Woman(){}  // 子构造函数
+        Woman.prototype = new Person()  // 原型继承
+        Woman.prototype.constructor = Woman  // 恢复指向构造函数
+        Woman.prototype.baby = function(){
+            console.log('baby');
+        }
+        const red = new Woman()  // 实例对象
+        console.log(red)
+        
+        function Man(){}    // 子构造函数
+        Man.prototype = new Person()  // 原型继承
+        Man.prototype.constructor = Man  // 恢复指向构造函数
+        Man.prototype.play = function(){
+            console.log('play');
+        }
+        const blue = new Man()  // 实例对象
+        console.log(blue)
+        
+        
+
+
+    </script>
+</body>
+</html>
+
